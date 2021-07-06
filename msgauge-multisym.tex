@@ -1,0 +1,295 @@
+%- HandOut Flag -----------------------------------------------------------------------------------------
+\makeatletter
+\@ifundefined{ifHandout}{%
+  \expandafter\newif\csname ifHandout\endcsname
+}{}
+\makeatother
+
+%- D0cum3nt ----------------------------------------------------------------------------------------------
+\documentclass[beamer,10pt]{standalone}   
+%\documentclass[beamer,10pt,handout]{standalone}  \Handouttrue  
+
+\ifHandout
+	\setbeameroption{show notes} %print notes   
+\fi
+
+	
+%- Packages ----------------------------------------------------------------------------------------------
+\usepackage{custom-style}
+\usetikzlibrary{positioning}
+\usepackage{multicol}
+
+
+%--Beamer Style-----------------------------------------------------------------------------------------------
+\usetheme{toninus}
+\usepackage{animate}
+\usetikzlibrary{positioning, arrows}
+\usetikzlibrary{shapes}
+
+\begin{document}
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+
+%---------------------------------------------------------------------------------------------------------------------------------------------------
+\subsection{Lie $\infty$-algebra of Observables}
+\begin{frame}[fragile,t]{Lie $\infty$-algebra of Observables (higher observables) }
+	Let be $(M,\omega)$ a $n$-plectic manifold.
+	\begin{defblock}[$L_\infty$-algebra of observables ~\emph{(Rogers)}]
+		\hspace{.25em} Is a cochain-complex $(L,\{\cdot\}_1)$ \\
+		\vspace{-2.5em}
+		\begin{center}
+		\ifHandout
+			\includestandalone{Pictures/Figure_Observables}	
+		\else
+			\includestandalone{Pictures/Frame_Observables}
+		\fi				
+		\end{center}
+		\onslide<2->{
+			\hspace{.25em} with $n$ (skew-symmetric) multibrackets $(2 \leq k \leq n+1)$\\
+			\vspace{-1.5em}
+			\begin{center}
+				\includestandalone{Pictures/Equation_Multibracket}	
+			\end{center}
+		}
+		%
+	\end{defblock}
+  	\vfill
+	\onslide<3->{
+		\emph{Higher analogue} of the \emph{Poisson algebra structure} associated to a symplectic mfd.
+	\vfill
+	\begin{columns}
+		\hfill
+		\begin{column}{.11\linewidth}	
+			If $n>1$:
+			
+		\end{column}	
+		\begin{column}{.8\linewidth}
+		\begin{itemize}
+			\item[\xmark] \textcolor{red}{we lose} :\quad multiplication of observables, Jacobi equation;
+			%\\ \hspace*{4.25em} full-fledged Jacobi equation;
+			\item[\cmark] \textcolor{green}{we gain} :\quad brackets with arities different than two,\\
+			\hspace*{4.25em}
+			 Jacobi equation \emph{up to homotopies}.
+		\end{itemize}		
+		\end{column}		
+	\end{columns}
+	}
+  \end{frame}
+ \note[itemize]{
+	\item if symplectic manifolds are the symmetric take on mechanics, Poisson algebras are the algebraic counterpart.
+ 	\item A Lie algebra is associated to an ordinary symplectic manifold (its Poisson algebra).
+	%(Underlying this is a Lie algebra, whose Lie bracket is the Poisson bracket.)
+	Similarly, one associates an Lie-$n$ algebra to any $n$-plectic manifold.
+ 	% https://ncatlab.org/nlab/show/n-plectic+geometry 	 
+ 	 %https://ncatlab.org/nlab/show/Poisson+bracket+Lie+n-algebra
+	 \item Basically, the higher observables algebra is a chunk of the de Rham complex of $M$ with inverted grading( convention employed here) and an extra structure called "multibrackets".
+ 	\item ( In the 1-plectic case it reduces to the corresponding Poisson algebra of classical observables)
+ 	\item Rogers associated to any n-plectic mfd a $L\-\infty$ algebra, Zambon generalized it to the pre-n-plectic case.
+ 	\item Recognize in the definition of $\{\cdot,\ldots,\cdot\}_k$ the contraction with hamiltonian fields $v_\sigma$ w.r.t. $\sigma$.
+  	\item Note $	\iota_{v_{\sigma_1}}\cdots\iota_{v_{\sigma_k}} = (-)^{(k-1)+(k-2)+\dots+1}\iota_{v_{\sigma_k}}\cdots\iota_{v_{\sigma_1}} = (-)^{\frac{k(k-1)}{2}}\iota_{v_{\sigma_k}}\cdots\iota_{v_{\sigma_1}}$ 
+ 	The definition usually find in literature of Rogers multibrackets involves the coefficient $ (-)^{\frac{k(k-1)}{2}} = -\varsigma(k-1) = (-)^{k+1} \varsigma(k)$.
+  \item higher observables is Special instance of a more general object  called $L\-\infty$ Algebra...
+ }
+%------------------------------------------------------------------------------------------------
+
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+\subsection{Homotopy comomentum maps}\label{frame:hcmm-main}
+\begin{frame}[fragile]{Homotopy comomentum maps}
+	Consider a Lie algebra action $v:\mathfrak{g} \to \mathfrak{X}(M)$  \underline{preserving the $n$-plectic form $\omega$}.
+	\vfill
+	\begin{defblock}[Homotopy comomentum map \emph{(Callies, Fregier, Rogers, Zambon)}]
+		\ifHandout
+			\includestandalone{Pictures/Figure_Lifting}
+		\else
+			\includestandalone{Pictures/Frame_Lifting}
+		\fi					
+	\end{defblock}
+	\onslide<4->{
+	\begin{lemblock}[HCMM unfolded  \cite{Callies2016}]
+			%
+			HCMM is a sequence of (graded-skew) multilinear maps:
+			\begin{displaymath}
+				(f)  = \big\lbrace f_k: \; \Lambda^k{\mathfrak g} \to L^{1-k} \subseteq \Omega^{n-k}(M) 
+				~\big\vert~ 0\leq k \leq n+1  \big\rbrace
+			\end{displaymath}
+			\emph{fulfilling:}%\emph{such that:}
+			\begin{itemize}
+				\item<5-> $f_0 = 0 $, $f_{n+1} = 0$
+				\item<6-> $d f_k (p) = f_{k-1} (
+				\tikz[baseline,remember picture]{\node[rounded corners,
+                        fill=green!5,draw=green!30,anchor=base]            
+            			(target) {$\partial $ };
+            	}				
+				p)  - (-1)^{\frac{k(k+1)}{2}} \iota(v_p) \omega 
+				\qquad\scriptstyle \forall p \in \Lambda^k(\mathfrak{g}),\; \forall k=1,\dots n+1$
+			\end{itemize}
+		\onslide<7->{
+			\tikz[overlay,remember picture]
+			{
+				\node[rounded corners,
+	                 draw=green!30,anchor=base]            
+	            	 (base) at ($(current page.east)-(3,3)$) [rotate=-0,align=center] {\footnotesize{\hyperlink{frame:CE-complex}{\emph{Chevalley-Eilenberg boundary op.}}}};
+			}	
+		\begin{tikzpicture}[overlay,remember picture]
+	    	\path[->] (base.west) edge[bend right,green](target.north east);
+	    \end{tikzpicture}
+	    }
+	\end{lemblock}	
+	}
+	\vfill
+\end{frame}
+\note[itemize]{
+	\item  An infinitesimal symmetry is a lie algebra morphism such that $\mathcal{L}_{v_x} \omega = 0 ~ \forall x \in \mathfrak{g}$.
+	\\ (It is also call an infinitesimal multisymplectic action and $v_x$ is the infinitesimal generator of the action, corresponding to $x \in \mathfrak g$.) 
+	\item Essentially, admitting a comoment maps mean that $v$ acts via Hamiltonian vector fields.
+	\item In mechanical terms, a moment map is a tool associated with a Hamiltonian action of a Lie group on a symplectic manifold, used to construct conserved quantities for the action.(see \ref{frame:HCMMandConserved} in appendix.
+}
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{frame}[fragile]{Embedding observables $L_\infty$-algebra into Vinogradov $L_\infty$-algebra}
+	Consider now $\omega$ \alert{$n$-plectic}
+	\vfill
+	\begin{center}
+		\includestandalone[width=.8\textwidth]{Pictures/Frame_Embedding_Diagram_k-plectic_V1}
+	\end{center}
+	\vfill
+	\only<1-3>{
+	\begin{itemize}
+		\item<2-> Higher analogue of the Courant algebroid $\rightsquigarrow$ \alert{\emph{Vinogradov algebroid}}
+			\begin{displaymath}
+			E^n = \left(TM\oplus\bigwedge^{n-1}T^\ast M \right)
+			\end{displaymath}
+		\item<3->  Vin. alg.oids are $NQ$-manifolds ($L_\infty$-algebroids).
+		\\ Associated $L_\infty$-algebra on the graded vector space
+		\begin{displaymath}\label{eq:VSpace}
+			{\mathcal{V}^k} =
+			\begin{cases}
+				\mathfrak{X}(M)\oplus \Omega^{n-1}(M)  &\quad k=0,\\
+				\Omega^{n-1+k}(M) &\quad -n+1 \leq k < 0.
+			\end{cases}
+		\end{displaymath}
+	\end{itemize}
+	}
+
+
+	\only<4->{
+	\begin{thmblock}[Embedding of $L_\infty$-algebras  $\Psi:L_\infty(M,\omega)\hookrightarrow L_{\infty}(E^n,\omega)$\quad \cite{Miti2021}.]
+	\begin{itemize}[leftmargin=0pt]
+		\item[$\cdot$]<4-> 
+			consider the graded vector subspace $\mathcal{A}$
+			\begin{displaymath}
+			\mathclap{
+			{\mathcal{A}^k} =
+			\begin{cases}
+		\left.\left\lbrace
+		\binom{X}{\alpha}\in \mathfrak{X}(M)\oplus \Omega^{n-1}(M)
+		~ \right\vert ~
+		\iota_X \omega = -d \alpha\right\rbrace
+&\quad k=0,\\
+				\Omega^{n-1+k}(M) &\quad -n+1 \leq k < 0.
+			\end{cases}			
+			}
+			\end{displaymath}						
+		\item[$\cdot$]<5-> 
+			restrict the two $L_\infty$-structures to $\pi$ and $\mu$ on $\mathcal{A}$
+		\item[$\cdot$]<6->
+
+			$L_\infty(M,\omega) \cong 
+				(\mathcal{A},\pi) \color{blue}\cong\color{black}
+				(\mathcal{A},\mu) \hookrightarrow
+				L_\infty(E^n,\omega)$
+	\end{itemize}
+	\end{thmblock}
+	}
+	\only<6->{
+		\tikz[overlay,remember picture]
+		{
+			\node[rounded corners,
+                 fill=orange!1,draw=orange!30,anchor=base]            
+            	 (base) at ($(current page.east)-(2.25,4)$) [rotate=-0,text width=3cm,align=center] { \footnotesize{\color{red}{
+            	 Complete proof\\
+            	 \faWarning ~ up to $n\geq 4$! ~ \faWarning 
+            	 }}};
+		}			
+	}
+
+		
+
+\end{frame}
+\note{}
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{frame}{Compatibility with Gauge transformations}
+	Consider now $\omega$ \alert{n-plectic} \quad and \alert{$\tilde{\omega}=\omega + d B$}:
+	\vfill
+	%
+	\begin{center}
+		\includestandalone[width=.8\textwidth]{Pictures/Frame_Gauge_Diagram_k-plectic}
+	\end{center}	
+	%
+	\vfill
+	%
+	
+
+	\begin{itemize}
+	\only<1-3>{
+		\item<2-> Vinogradov alg.oids w.r.t cohomologous twisting closed forms are isomorphic.
+		\item<3-> Induced isomorphism at the level of $L_\infty$-algebras
+	}
+	\only<4->{
+		\item<4-> Consider a Lie algebra action $\mathfrak{g}\to \mathfrak{X}(M)$ admitting HCMM w.r.t $\omega$ and $\tilde{\omega}$
+	}
+	\end{itemize}
+
+	\vfill
+	\tcbset{colback=white,
+		colbacktitle=white,
+		colframe=blue!70!black,
+		boxrule=1pt,
+		colupper=blue!70!black,
+		arc=15pt,
+		}
+	\onslide<5->{
+	\begin{tcolorbox}[sidebyside,righthand width=.75\linewidth]
+		Thm: \cite{Miti2021}
+		\tcblower
+		\color{blue}
+The central square commutes. 
+			\\\emph{(On the nose, not "up to homotopies")}.
+	\end{tcolorbox}	
+		\tikz[overlay,remember picture]
+		{
+			\node[rounded corners,
+                 fill=orange!1,draw=orange!30,anchor=base]            
+            	 (base) at ($(current page.east)-(1.75,4)$) [rotate=-0,text width=3cm,align=center] { \footnotesize{\color{red}{
+            	 Complete proof\\
+            	 \faWarning ~ up to $n\geq 4$! ~ \faWarning 
+            	 }}};
+		}		
+	
+	
+	}
+	
+
+\end{frame}
+\note[itemize]{
+	\item Our results can be seen as a tiny step toward  undestanding the analogue of prequantization in the setting of multisymplectic geometry (hence field theory).
+}
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+\end{document}

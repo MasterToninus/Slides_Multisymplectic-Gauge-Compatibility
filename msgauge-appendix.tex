@@ -1,0 +1,271 @@
+%+----------------------------------------------------------------------------+
+%| SLIDES: 
+%| Chapter: Complementary material - details on eventual questions
+%| Author: Antonio miti
+%| Event: PHD preliminary Defence
+%+----------------------------------------------------------------------------+
+
+%- HandOut Flag -----------------------------------------------------------------------------------------
+\newif\ifHandout
+
+%- D0cum3nt ----------------------------------------------------------------------------------------------
+\documentclass[beamer,10pt]{standalone}   
+%\documentclass[beamer,10pt,handout]{standalone}  \Handouttrue  
+
+%- HandOut Flag -----------------------------------------------------------------------------------------
+\ifHandout
+	\setbeameroption{show notes} %print notes   
+\fi
+
+	
+%- Packages ----------------------------------------------------------------------------------------------
+\usepackage{custom-style}
+
+%--Beamer Style-----------------------------------------------------------------------------------------------
+\usetheme{toninus}
+
+
+
+\providecommand{\blank}{\text{\textvisiblespace}}
+
+
+\newcommand{\subsectiontitle}{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\insertsectionhead\par%
+    \usebeamerfont{title}\insertsubsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+
+\providecommand{\blank}{\text{\textvisiblespace}}
+
+
+
+
+%---------------------------------------------------------------------------------------------------------------------------------------------------
+%- D0cum3nt ----------------------------------------------------------------------------------------------------------------------------------
+\begin{document}
+%------------------------------------------------------------------------------------------------
+
+%##################################################################################
+\begin{frame}
+	\begin{center}
+	\Huge\emph{Supplementary Material}
+	\end{center}
+\end{frame}
+\note[itemize]{
+	\item
+}
+\addtocounter{framenumber}{-1}
+%##################################################################################
+
+
+
+
+
+%===================================================================================
+\section{Background}
+%===================================================================================
+
+
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+\subsection{MultiSymplectic Geometry}
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{frame}[fragile]{Multisymplectic geometry in a nutshell}
+	\begin{block}{Historical motivation}
+		Mechanics: geometrical foundations of \textit{(first-order)} field theories.
+	\end{block}
+	\vfill	
+	\begin{table}
+		\only<2>{
+		\begin{tabular}{|p{0.2\textwidth}|p{0.3\textwidth}|p{0.35\textwidth}|} 
+            \hline
+            \parbox[][20pt][c]{0.2\textwidth}{mechanics} & \multicolumn{2}{c|}{geometry} \\
+            \hline
+            \parbox[][20pt][c]{0.2\textwidth}{phase space} & symplectic manifold &  \\[.25em]
+            \parbox[][20pt][c]{0.2\textwidth}{classical \\ observables} & Poisson algebra &  \\[.25em]
+            \parbox[][20pt][c]{0.2\textwidth}{symmetries} &  group actions admitting comoment map &  
+            \\
+            \hline
+  \multicolumn{1}{c}{}
+            &  \multicolumn{1}{@{}c@{}}{$\underbrace{\hspace*{.3\textwidth}}_{\text{point-like particles systems}}$} 
+            &  \multicolumn{1}{@{}c@{}}{}              \\
+		\end{tabular}
+		
+		
+		}
+		\onslide<3->{
+		\begin{tabular}{|p{0.2\textwidth}|p{0.3\textwidth}|p{0.35\textwidth}|} 
+            \hline
+            \parbox[][20pt][c]{0.2\textwidth}{mechanics} & \multicolumn{2}{c|}{geometry} \\
+            \hline
+            \parbox[][20pt][c]{0.2\textwidth}{phase space} & symplectic manifold & multisymplectic manifold \\[.25em]
+            \parbox[][20pt][c]{0.2\textwidth}{classical \\ observables} & Poisson algebra & $L_\infty$-algebra \\[.25em]
+            \parbox[][20pt][c]{0.2\textwidth}{symmetries} &  group actions admitting comoment map & group actions admitting 
+			\tikz[baseline,remember picture]{\node[rounded corners,
+                        fill=orange!10,draw=orange!30,anchor=base]            
+            			(target) {homotopy comomentum map};
+            }
+            \\
+            \hline
+  \multicolumn{1}{c}{}
+            &  \multicolumn{1}{@{}c@{}}{$\underbrace{\hspace*{.3\textwidth}}_{\text{point-like particles systems}}$} 
+            &
+            \multicolumn{1}{@{}c@{}}{$\underbrace{\hspace*{.3\textwidth}}_{\text{field-theoretic systems}}$} 
+               \\
+		\end{tabular}
+		}
+	\end{table}		
+	\vfill
+	\onslide<4->{
+	
+	\begin{block}{Scope of the thesis}
+		\begin{itemize}
+			\item[$\bullet$] Develop theory of 
+				\tikz[baseline,remember picture]{\node[rounded corners,
+                        fill=orange!10,draw=orange!30,anchor=base]            
+            			(base) {homotopy comomentum maps};
+            	}
+            \item[$\bullet$] produce new meaningful examples.
+		\end{itemize}
+	\end{block}
+
+
+                    \begin{tikzpicture}[overlay,remember picture]
+                    \path[->]<4-> (base.north east) edge[bend right](target.south east);
+                    \end{tikzpicture}
+	}
+
+
+\end{frame}
+\note[itemize]{
+	\item Historically, the interest in multisymplectic manifolds, has been motivated by the need for understanding the geometrical foundations of first-order classical field theories.
+	The key point is that, just as one can associate a symplectic manifold to an ordinary classical mechanical system (e.g. a single
+point-like particle constrained to some manifold), it is possible to associate a multisymplectic
+manifold to any classical field system (e.g. a continuous medium like a filament or a fluid). See frame Extra-\ref{Frame:Ms-Field-Mechanics} 
+	
+	\item General ideas basic parallelisms with caveats
+	\item caveat: points in multiphase spaces are not states
+	\item the table hides the duality between geometric and algebraic approaches to the problem.
+	\item 
+}
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{frame}[fragile]{Multisymplectic manifolds} %Fragile -->workaround tikzcd
+	\begin{defblock}[$n$-plectic manifold ~\emph{(Cantrijn, Ibort, De Le\'on)}]
+	\includestandalone[width=0.95\textwidth]{Pictures/Figure_multisym}	
+	\end{defblock}
+	%
+	\begin{defblock}[Non-degenerate $(n+1)$-form]
+		\begin{columns}
+			\begin{column}{.45\linewidth}
+				\centering{
+				The $\omega^\flat$ (flat) bundle map is injective.
+				}
+			\end{column}
+			\begin{column}{.5\linewidth}
+						\vspace{-.5em}
+				\[
+				\begin{tikzcd}[column sep= small,row sep=0ex,
+				/tikz/column 1/.append style={anchor=base east}]
+				    \omega^\flat \colon T M \ar[r]& \Lambda^n T^\ast M \\
+  						 (x,u) \ar[r, mapsto]& (x,\iota_{u} \omega_x)						
+				\end{tikzcd}	
+				\]
+			\end{column}
+		\end{columns}
+	\end{defblock}
+	%
+	\pause
+	\begin{defblock}[Hamiltonian $(n-1)$-forms]
+		\begin{displaymath}
+			\Omega^{n-1}_{ham}(M,\omega) 	:=
+			\biggr\{ \sigma \in  \Omega^{n-1}(M) \; \biggr\vert \; 
+				\exists \mathscr{v}_\sigma \in \mathfrak{X}(M) ~:~ 
+				\tikz[baseline,remember picture]{\node[rounded corners,
+                        fill=orange!5,draw=orange!30,anchor=base]            
+            			(target) {$d \sigma = -\iota_{\mathscr{v}_\sigma} \omega$ };
+            	}				
+				~\biggr\} 
+			\end{displaymath}
+	\end{defblock}
+	%
+	%
+	\pause
+		\tikz[overlay,remember picture]
+		{
+			\node[rounded corners,
+                 fill=orange!5,draw=orange!30,anchor=base]            
+            	 (base) at ($(current page.east)-(2.25,1.8)$) [rotate=-0,text width=4cm,align=center] {\footnotesize{\textcolor{red}{Hamilton-DeDonder-Weyl \\equation}}};
+		}	
+	\begin{tikzpicture}[overlay,remember picture]
+    	\path[->] (base.west) edge[bend left,red](target.south west);
+    \end{tikzpicture}	
+	\pause
+	\vfill
+	%
+	\begin{block}{Examples:}
+		\vspace{-.5em}
+		\setbeamercovered{transparent}
+		\begin{itemize}[<+->]
+			\item[$\bullet$] $n=1$ \qquad\qquad\qquad $\Rightarrow$\quad $\omega$ is a symplectic form
+			\item[$\bullet$]  $n=(dim(M)-1)$ \quad$\Rightarrow$\quad $\omega$ is a volume form
+			%Any oriented $(n+1)$-dimensional manifold is $n$-plectic w.r.t. the volume form.
+			%\item[$\bullet$] Let $G$ a semisimple Lie group and $\langle\cdot,\cdot \rangle$  its killing form. Then $\langle [\cdot,\cdot],\cdot \rangle$ extends to a biinvariant multisymplectic form $\omega$.
+			\item[$\bullet$] Let $Q$ a smooth manifold, the multicotangent bundle $\Lambda^n T^\ast Q$ is naturally $n$-plectic.%
+			\quad
+			\textit{(cfr, \href{https://arxiv.org/abs/physics/9801019}{GIMMSY} construction for classical field theories)}
+		\end{itemize}
+	\end{block}			 
+	
+%
+\end{frame}
+\note[itemize]{
+	\item Multisymplectic ($n$-plectic) geometry is a generalization of symplectic geometry where a closed, non degenerate $n+1$-form $(n\geq 1)$  takes the place of the symplectic 2-form
+	
+	\item multisymplectic means \emph{going higher} in the degree of $\omega$
+	
+	\item non degeneracy means $\iota_v\omega = 0 \Leftrightarrow v=0$.
+	
+	\item examples 
+		\begin{itemize}
+			\item[$\bullet$] 1-plectic $=$ symplectic
+			\item[$\bullet$] Any oriented $(n+1)$-dimensional manifold is $n$-plectic w.r.t. the volume form.
+			\item[$\bullet$] The multicotangent bundle $\Lambda^n T^\ast Q$ is naturally $n$-plectic.
+		\end{itemize}
+	
+	\item We recognize the special class of forms, called Hamiltonian, determining the Hamiltonian vector fields. 
+	Not every $n-1$ form admits an Hamiltonian vector field.
+	When it exists, non degeneracy guarantees unicity.
+	
+	\item Observe also that, by degree reason, when $n$ is equal to $1$ or $dim(M)+1$ an injective flat map $\flat$ is also bijective.
+	
+	\item It is important to stress that mechanical systems are not the only source instances of this class of of structures. 
+				e.g. any semisimple Lie groups has associated a 2-plectic structure and any oriented $n+1$ dimensional manifold is naturally $n$-plectic.
+				
+
+}
+%---------------------------------------------------------------------------------------------------------------------------------------------------
+
+\subsection{References}
+
+%------------------------------------------------------------------------------------------------
+% https://en.wikibooks.org/wiki/LaTeX/Bibliographies_with_biblatex_and_biber
+\begin{frame}[t,allowframebreaks]{Extended Bibliography}
+	\bibliographystyle{alpha}
+	\bibliography{bibfile}
+\end{frame}
+%------------------------------------------------------------------------------------------------
+
+
+%------------------------------------------------------------------------------------------------
+\end{document}

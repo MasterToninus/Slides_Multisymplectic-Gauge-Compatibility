@@ -10,7 +10,7 @@
 
 %- HandOut Flag -----------------------------------------------------------------------------------------
 	\newif\ifHandout
-	\Handouttrue  %uncomment for the printable version
+	%\Handouttrue  %uncomment for the printable version
 	%Handling of flags it is not preserved when passing to standalone-subfiles!
 
 
@@ -48,7 +48,7 @@
 \title{
 Gauge transformations of multisymplectic manifolds and $L_\infty$ observables
 }
-\subtitle{\href{www.google.com}{Young Researchers' Virtual Multisymplectic Geometry Workshop}}
+\subtitle{}
 \author[AMM]{\href{https://dmf.unicatt.it/miti/}{Antonio Michele Miti}}
 \institute[UCSC and KU Leuven]{
   \begin{tabular}[h]{ccc}
@@ -60,7 +60,8 @@ Gauge transformations of multisymplectic manifolds and $L_\infty$ observables
 }
 \date[Template_21] % (optional, should be abbreviation of conference name)
 {	
-	\href{https://scuoledidottorato.unicatt.it/phdschools/science-home}{International Doctoral Programme in Science } \\
+	{\vskip 2ex}
+	\href{www.google.com}{Young Researchers' Virtual Multisymplectic Geometry Workshop} \\
 	{\vskip 1ex}
 	Online, July 13, 2021
 }
@@ -73,24 +74,21 @@ Gauge transformations of multisymplectic manifolds and $L_\infty$ observables
 	\ifHandout
 
 	\else
-		\addtocounter{framenumber}{-1}
-		\begin{frame}{}
-		\label{frame:thankyouslide}
-			\vfill
-		  \centering 
-		  {\Huge\color{red} 
-		  \emph{Thank you for your attention!}}
-			\vfill
-			%
-			\centering
-			\fbox{
-				Picture or Take-away message.
-				% 		\includegraphics[width=.4\textwidth]{Pictures/thesis-cover}
-			}
-		\end{frame}
-		\note[itemize]{
-			\item
-		}
+	\addtocounter{framenumber}{-1}
+	\begin{frame}{}
+	\label{frame:thankyouslide}
+		\vfill
+	  \centering 
+	  {\Huge\color{red} 
+	  \emph{Thank you for your attention!}}
+		\vfill
+		%
+		\centering
+		\fbox{\includegraphics[width=.4\textwidth]{Pictures/thesis-cover}}
+	\end{frame}
+	\note[itemize]{
+		\item
+	}
 	\fi
 }
 
@@ -145,22 +143,32 @@ This is ongoing joint work with Marco Zambon.
 %-------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Introduction}
 %-------------------------------------------------------------------------------------------------------------------------------------------------
-	\input{template-intro}
+	\input{msgauge-intro}
 
 
 
 
 %-------------------------------------------------------------------------------------------------------------------------------------------------
-\section{Sec 1}
+\section{Gauge Compatibility Problem - Symplectic Case}
 \checkpoint	
 %-------------------------------------------------------------------------------------------------------------------------------------------------
-
+	\input{msgauge-sym}
 
 %-------------------------------------------------------------------------------------------------------------------------------------------------
 \subsection{SubSec a}
 %-------------------------------------------------------------------------------------------------------------------------------------------------
 	%\input{template-subsec-a}
 %-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+\section{Gauge Compatibility Problem - MULTISymplectic Case}
+\checkpoint	
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+	\input{msgauge-multisym}
+
+
+
 
 
 %-------------------------------------------------------------------------------------------------------------------------------------------------
@@ -175,7 +183,7 @@ This is ongoing joint work with Marco Zambon.
 \appendix
 %-------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Complementary Material}
-	\input{template-complementary-material}
+	\input{msgauge-appendix}
 	\input{template-aknowledgements}
 %------------------------------------------------------------------------------------------------
 

@@ -1,0 +1,134 @@
+%- HandOut Flag -----------------------------------------------------------------------------------------
+\makeatletter
+\@ifundefined{ifHandout}{%
+  \expandafter\newif\csname ifHandout\endcsname
+}{}
+\makeatother
+
+%- D0cum3nt ----------------------------------------------------------------------------------------------
+\documentclass[beamer,10pt]{standalone}   
+%\documentclass[beamer,10pt,handout]{standalone}  \Handouttrue  
+
+\ifHandout
+	\setbeameroption{show notes} %print notes   
+\fi
+
+	
+%- Packages ----------------------------------------------------------------------------------------------
+\usepackage{custom-style}
+\usetikzlibrary{positioning}
+\usepackage{multicol}
+
+
+%--Beamer Style-----------------------------------------------------------------------------------------------
+\usetheme{toninus}
+\usepackage{animate}
+\usetikzlibrary{positioning, arrows}
+\usetikzlibrary{shapes}
+
+\begin{document}
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+\begin{frame}[fragile]{Compatibility between gauge transformations and comoment maps}
+	%
+	Consider $(M,\omega)$ \alert{symplectic mfd.}
+	\only<5-11>{ and \alert{\underline{prequantizable}} ($S^1$-bundle $P$, connection $\theta$)}
+	%
+	\begin{center}
+			\includestandalone[width=.8\textwidth]{Pictures/Frame_BigDiagram_symplectic}
+	\end{center}
+	%
+	\vspace{-2em}
+	\begin{minipage}[t][1.7cm][t]{\textwidth}
+	\begin{itemize}
+		\only<1-4>{
+			\item<2-> Given a Symp. mfd. $(M,\omega)$ there is a naturally associated Poisson algebra ...
+			\item<3-> .\alert<+>{... and also a Lie Algebroid}.
+			\item<4-> A Lie algebroid is a "controlled" $\infty$-dimensional Lie algebra;
+		}
+		\only<5-6>{
+			\item<5-> Prequantization Bundle $S^1\hookrightarrow P \to M$ with connection $\theta$,
+			\item<5-> "infinitesimal quantomorphisms" $Q(P,\theta):=\lbrace Y \in \mathfrak{X}(P)~|~ \mathcal{L}_Y \theta =0 \}$.
+		}
+		\only<7-11>{
+		\item<7-> Consider a deformed structure $\tilde{\omega}= \omega + d B$ with $B\in C^\infty(M)$;
+		\item<9-> There is a natural isomorphism in the Lie Alg.oids category,
+		\item<11-> Considering $\mathfrak{g}\circlearrowleft M$ preserving $\omega$ and $\tilde{\omega}$ ...
+		}
+		\item<12-> Neglect the prequantization...
+		\vspace{-1em} 
+			\begin{displaymath}
+				\begin{tikzcd}
+					\Psi~:&[-1em] C^{\infty}(M)_\omega \ar[r,"\Psi"]& \Gamma(TM\oplus \mathbb{R})_\omega
+					\\[-2em]
+					& f \ar[r,mapsto] & \binom{\mathscr{v}_f}{f}
+				\end{tikzcd}
+			\end{displaymath}
+	\end{itemize}
+	\end{minipage}
+	\vfill
+	\tcbset{colback=white,
+	colbacktitle=white,
+	colframe=red!70!black,
+	boxrule=1pt,
+	colupper=red!70!black,
+	arc=15pt,
+	}
+	\begin{minipage}[t][1.7cm][t]{\textwidth}
+	\only<6>{ 
+		\begin{tcolorbox}[enhanced,frame hidden,borderline={0.5pt}{0pt}{blue}]
+			\color{blue}{
+			The left square and right triangles commutes!
+			}
+		\end{tcolorbox}
+	}
+	\only<11>{
+		\begin{tcolorbox}[enhanced,frame hidden,borderline={0.5pt}{0pt}{blue}]
+			\color{blue}{
+			The left square and right triangle commute!
+			}
+		\end{tcolorbox}
+	}
+	\only<12>{
+		\vspace{-.75em}
+		\begin{tcolorbox}[enhanced,frame hidden,borderline={0.5pt}{0pt}{blue}]
+			\color{blue}{
+			The central pentagon commutes!
+			}
+		\end{tcolorbox}
+	\vfill
+		\vspace{-.75em}
+		\begin{center}
+		\tcbox[enhanced,frame hidden,borderline={0.5pt}{0pt}{red,dashed}]{	
+			\alert{
+			\faQuestionCircle \qquad
+				{What happens in the higher (n-plectic) case?}
+			\qquad \faQuestionCircle		
+			}
+		}
+		\end{center}
+	}
+	\end{minipage}
+	%
+\end{frame}
+\note[itemize]{
+	\item The horizontal embedding is  $f \mapsto (v_f,f)$;
+	\item Vertical maps are also known as \emph{Gauge transformations}
+	\item upshot: 
+	\begin{enumerate}
+		\item 
+	\end{enumerate}
+}
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+\end{document}

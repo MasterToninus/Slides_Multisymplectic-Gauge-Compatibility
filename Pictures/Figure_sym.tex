@@ -19,7 +19,7 @@
 % displaystyle so that we don't get small fractions.
 \everymath{\displaystyle}
 
-	\begin{minipage}[c]{0.25\textwidth}
+	\begin{minipage}[c]{0.2\textwidth}
 			\begin{displaymath}
 				 \big(
 				 \tikz[baseline]{
@@ -34,13 +34,13 @@
 				\big)
 			\end{displaymath}	
 	\end{minipage}
-	\begin{minipage}[t]{0.75\textwidth}
+	\begin{minipage}[t]{0.8\textwidth}
 		\tikzstyle{na} = [baseline=-.5ex]
 		\begin{itemize}
-		    \item[] \tikz[na] \node[coordinate,fill=blue!20,draw,circle] (n1) {};		    
+		    \item[] \tikz[na] \node[scale=0.5,coordinate,fill=blue!20,draw,circle] (n1) {};		    
 		   		 Smooth mfd.
 		        
-		    \item[] \tikz[na]\node [coordinate,fill=blue!20,draw,circle] (n2) {};	    
+		    \item[] \tikz[na]\node[scale=0.5,coordinate,fill=blue!20,draw,circle] (n2) {};	    
 		    		non-degenerate, closed, $2$-form.
 
 		\end{itemize}	

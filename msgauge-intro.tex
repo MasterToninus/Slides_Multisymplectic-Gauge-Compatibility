@@ -14,81 +14,268 @@
 \fi
 
 	
-%- Packages ----------------------------------------------------------------------------------------------
+%- Packages -------------------------------------------------------------------------------------------
 \usepackage{custom-style}
 \usetikzlibrary{positioning}
 \usepackage{multicol}
+\usepackage{stmaryrd}
 
-
-%--Beamer Style-----------------------------------------------------------------------------------------------
+%--Beamer Style----------------------------------------------------------------------------------------
 \usetheme{toninus}
 \usepackage{animate}
 \usetikzlibrary{positioning, arrows}
 \usetikzlibrary{shapes}
 
 \begin{document}
+\outline
 %-------------------------------------------------------------------------------------------------------------------------------------------------
-\begin{frame}{Introduction}
-	\begin{columns}[]
-	\begin{column}{0.55\textwidth}
-		PhD colloquium:
-		\\
-		i.e.~
-		\emph{a talk inspired by my doctoral project}
-
-	\vspace{1em}
-
-	\begin{itemize}
-		\item<2-> \underline{Thesis}: focus on certain \emph{higher generalizations} in \emph{ symplectic geometry}.
-		\item<3-> \underline{Talk}: focus on \emph{motivations} rather than details.
-	\end{itemize}	
-
-
-
+\begin{frame}{Symplectic geometry (mechanical perspective)}
+\begin{columns}[T]
+	\begin{column}{.50\linewidth}
+		\centering
+		\textit{ "geometric approach" to mechanics \dots}
+		%
+		\begin{columns}
+			\begin{column}{.60\linewidth}
+				\begin{center}
+					\includegraphics[width=0.6\linewidth]{Pictures/pendulum13}			
+				\end{center}
+			\end{column}	
+			\begin{column}{.40\linewidth}
+				\begin{center}
+					\includegraphics[width=0.45\linewidth]{Pictures/pendulum-phase-space}			
+				\end{center}
+			\end{column}	
+		\end{columns}
+		%
+		\begin{defblock}[Symplectic Manifold]
+			\vspace{-1em}
+			\includestandalone[width=1\textwidth]{Pictures/Figure_sym}	
+		\end{defblock}
+		%
+		\pause
+		\begin{exblock}[$M = T^\ast Q$ is symplectic]
+			$\omega = d \theta $ with
+			$$ \left.\theta\right\vert_{(q,p)} (v) = p (\pi_\ast v) ~.$$
+		\end{exblock}
+		%
+		\pause
+		\vspace{1em}
+		\centering
+		\textit{ based on the notion of "states".}		
 	\end{column}
-	\begin{column}{0.4\textwidth}
-		\onslide<2->{
-			\fbox{\includegraphics[width=.9\textwidth]{Pictures/thesis-zoom}}
+	\onslide<1->{\vrule{}}
+	\pause
+	\begin{column}{.50\linewidth}
+		\centering
+		\textit{ "algebraic approach" to mechanics \dots}
+		\vspace{.5em}	
+		\begin{defblock}[Classical Observables]
+			Unital, associative, commutative algebra $C^\infty(M)$.
+		\end{defblock}
+		%
+		\vspace{.5em}
+		\pause
+		\begin{defblock}[Hamiltonian vector fields]
+			$v_f \in \mathfrak{X}(M)$ such that:
+			$$\iota_{v_f} \omega = -df \quad \text{(exact)}$$ %$\in B^1(M)$
+			\small$v_f$ = \emph{Ham.v.f. pertaining to $f\in C^\infty(M)$}.
+		\end{defblock}
+		%
+		\begin{defblock}[Poisson Algebra of Observables]
+			$C^\infty(M)$ is a Poisson algebra with
+			$$\{f,g\} = \iota_{v_g} \iota_{v_f} \omega = \omega(v_f,v_g) ~.$$
+		\end{defblock}
+		%
+		\pause
+		\vspace{.8em}
+		\centering
+		\textit{ based on the notion of "meaurable quantities".}						
+	\end{column}
+\end{columns}
+\end{frame}
+\note[itemize]{
+	\footnotesize
+
+	\item We work in the framework of multisymplectic geometry which is one of the possible generalizations of the well-established field of symplectic geometry.
+	
+	\item To recall what symplectic geometry is let me assume a particular point of view: mechanics.
+	\\
+	Idea:"
+	Symplectic geometry is a branch of differential geometry studying symplectic manifolds; it originated as a formalization of the mathematical apparatus of classical mechanics and geometric optics."{\href{https://ncatlab.org/nlab/show/symplectic+geometry}{nlab}}
+	
+	Namely, a sym. mfd. is the geometric structure encoding the phase space of conservative, ordinary, classical, mechanical systems.
+	
+	\item $\theta$ = \emph{tautological 1-form}.
+		$\theta$ evaluated at $p\in T^*Q$ in the fibre of $q\in Q$ and contracted with $v$ coincides with the form $p$ evaluated at $q$ and contracted with the push forward of $v$.
+	
+	\item We identify a special class of vector fields.
+		Out of them one can define a Lie bracket.
+	
+	\item Poisson is a Lie algebra with the extra property of compatibility with the associative product (Leibniz rule)
+	
+	\item take away message: geometric (based on "states") vs algebraic (based on "measurable quantities").7
+}
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{frame}{From Symplectic to MultiSymplectic (mechanical perspective)}
+	\begin{block}{Historical motivation}
+		Mechanics: geometrical foundations of \textit{(first-order)} field theories.
+		\begin{itemize}
+		 \item[•] Kijowski and W. Tulczyjew \cite{Kijowski1979}; %(1979)
+		 \item[•] Cariñena, Crampin, Ibort \cite{Carinena1991b};% (1991)
+		 \item[•] Gotay, Isenberg, Marsden, Montgomery \cite{Gimmsy1};%(1998)
+		 \\ $\cdots$
+		\end{itemize}
+	\end{block}
+	\vfill
+	\begin{center}
+	\tcbox[enhanced,frame hidden,borderline={0.5pt}{0pt}{red,dashed}]{	
+		\alert{
+		\faWarning \qquad
+			{The lack of a satisfactory notion of observables hindered the spread of this formalism.}	
+		\qquad \faWarning		
 		}
-	\end{column}
-	\end{columns}
+	}
+	\end{center}
+
 
 	\vfill
+	\begin{center}
+	\tcbox[enhanced,frame hidden,borderline={0.5pt}{0pt}{red,dashed}]{	
+		\alert{
+		\faQuestionCircle \qquad
+			{Why observables are so crucial?\qquad \qquad Quantization!}	
+		\qquad \faQuestionCircle		
+		}
+	}
+	\end{center}
 
-	\vfill
-	\begin{columns}[]
-	\begin{column}{0.35\textwidth}
-		\onslide<4->{
-			\begin{tikzpicture}
-				\node [draw,cloud callout, minimum height=10em,minimum width=12em] (L1) {};
-				\node [text width=12em,text centered] (L2) {Why talk about \\ \emph{geometric mechanics}?};
-			\end{tikzpicture}
-		}
-	\end{column}
-	\begin{column}{0.65\textwidth}
-		\onslide<5->{
-			\begin{tikzpicture}
-				\node [draw,ellipse callout, minimum height=10em,minimum width=22em] (L1) {};
-				\node [text width=18em] (L2) 
-					{
-						$\bullet$ Historical inspiration for the development of (multi)-symplectic geometry.
-						\\
-						$\bullet$ Provides a "physical" intuition of certain geometric structures (and vice-versa).
-					};
-			\end{tikzpicture}
-		}
-	\end{column}
+
+\end{frame}
+\note[itemize]{
+	\item Historically, the interest in multisymplectic manifolds, has been motivated by the need for understanding the geometrical foundations of first-order classical field theories.
+	The key point is that, just as one can associate a symplectic manifold to an ordinary classical mechanical system (e.g. a single
+point-like particle constrained to some manifold), it is possible to associate a multisymplectic
+manifold to any classical field system (e.g. a continuous medium like a filament or a fluid). See frame Extra-\ref{Frame:Ms-Field-Mechanics} 
+	\item Forger and Romero say: \emph{"The multisymplectic formalism is manifestly consistent with the basic principles of field theory, preserving full covariance, and it is mathematically rigorous because it uses well established methods from calculus on finite-dimensional manifolds. On the other hand, it does not seem to permit any obvious definition of the Poisson bracket between observables. Even the question of what mathematical objects should represent physical observables is not totally clear and has in fact been the subject of much debate in the literature. Moreover, the introduction of n conjugate momenta for each coordinate obscures the usual duality between canonically con- jugate variables (such as momenta and positions), which plays a fundamental role in all known methods of quantization.A definite solution to these problems has yet to be found."}
+	
+}
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{frame}{Observables in $n$-plectic geometry}
+	%
+	\begin{defblock}[Hamiltonian $(n-1)$-forms]
+		\begin{displaymath}
+			\Omega^{n-1}_{ham}(M,\omega) 	:=
+			\biggr\{ \sigma \in  \Omega^{n-1}(M) \; \biggr\vert \; 
+				\exists \mathscr{v}_\sigma \in \mathfrak{X}(M) ~:~ 
+				\tikz[baseline,remember picture]{\node[rounded corners,
+                        fill=orange!5,draw=orange!30,anchor=base]            
+            			(target) {$d \sigma = -\iota_{\mathscr{v}_\sigma} \omega$ };
+            	}				
+				~\biggr\} 
+			\end{displaymath}
+	\end{defblock}
+
+	\pause
+		\tikz[overlay,remember picture]
+		{
+			\node[rounded corners,
+                 fill=orange!5,draw=orange!30,anchor=base]
+            	 (base) at ($(current page.north east)-(2,1)$) [rotate=-0,text width=3.5cm,align=center] {\footnotesize{\textcolor{red}{Hamilton-DeDonder-Weyl \\equation}}};
+		}	
+	\begin{tikzpicture}[overlay,remember picture]
+    	\path[->] (base.south) edge[bend right,red](target.north);
+    \end{tikzpicture}
+	%
+	\vspace{-2em}
+	\begin{columns}[T]
+		\pause
+		\begin{column}{.50\linewidth}
+			%
+			\begin{thmblock}[Observables $L_\infty$-algebra]
+				$\Omega^{n-1}_{ham}(M,\omega)$ endowed with
+				\vspace{-.5em}
+				\begin{displaymath}
+					\lbrace \sigma_1, \sigma_2 \rbrace =			
+					~ - \iota_{\mathscr{v}_1}\iota_{\mathscr{v}_2} \omega 
+				\end{displaymath}			
+				\vspace{.4em}
+				can be "completed" to a \\ $L_\infty-algebra$.
+			\end{thmblock}
+			%
+			\pause
+			\begin{itemize}
+				\item[\cmark] Skew-symmetric;
+				\item[\xmark] multiplication of observables;
+				\item[\xmark] Jacobi equation;
+				%\\ \hspace*{4.25em} full-fledged Jacobi equation;
+				\item[\smark] Jacobi equation \emph{up to homotopies}.
+			\end{itemize}				
+		\end{column}	
+		%
+		\onslide<1->{\vrule{}}
+		%
+		\pause
+		\begin{column}{.50\linewidth}
+			\begin{thmblock}[Observables Leibniz algebra]
+				$\Omega^{n-1}_{ham}(M,\omega)$ endowed with
+				\vspace{-.5em}
+			\begin{displaymath}
+				\llbracket \sigma_1, \sigma_2 \rrbracket =
+				~ \mathcal{L}_{\mathscr{v}_1} \sigma_2
+				~.					
+			\end{displaymath}		
+				\vspace{.4em}
+				can be "completed" to a \\ DG-Leibniz algebra.
+			\end{thmblock}	
+			%
+			\pause
+			\begin{itemize}
+				\item[\xmark] Skew-symmetric;
+				\item[\xmark] multiplication of observables;
+				\item[\cmark] Jacobi equation;
+				\item[\smark] Skew-symmetric \emph{up to homotopies}.
+			\end{itemize}	
+		\end{column}	
 	\end{columns}
+\end{frame}
+\note[itemize]{
+ \item See \cite[\S 7.2]{Rogers2010} about the comparison of these two algebraic structures.
+}
+%-------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-
+%------------------------------------------------------------------------------------------------------
+\begin{frame}{Scope of the talk}
+	%
+	\centering
+	\begin{tikzpicture}
+		\node [draw,ellipse callout, minimum height=10em,minimum width=33em,callout relative pointer={(-2,-.5)}] (L1) {};
+		\node [text width=25em,text centered] (L2) {
+			Broad general question:\\
+			What is the corresponding	 "correct" notion of observables in multisymplectic geometry?	
+		};
+	\end{tikzpicture}
+	\vfill
+	\begin{tikzpicture}
+		\node [draw,ellipse callout, minimum height=10em,minimum width=33em,callout relative pointer={(2,-.5)}] (L1) {};
+		\node [text width=25em,text centered] (L2) {
+			Specific focused question:
+			\\
+			To what extent the compatibility diagram between gauge transformation and comomentum maps extend to the $n$-plectic case?
+		};
+	\end{tikzpicture}
 \end{frame}
 \note[itemize]{
 	\item
 }
 %-------------------------------------------------------------------------------------------------------------------------------------------------
 
-\outline
 
 
 \end{document}
