@@ -1,5 +1,5 @@
 # Event Title
-Slides for a contributed talk at the [Young Researchers Virtual Multisymplectic Geometry Workshop 2021](https://public.eimi.ru/~cblacker/index.html).
+Slides for a contributed talk at the [Young Researchers Virtual Multisymplectic Geometry Workshop 2021](https://public.eimi.ru/~cblacker/yrvmgc_21.html).
 
 
 Place: Online (EIMI St. Petersburg)
@@ -19,7 +19,7 @@ Although this construction is essentially algebraic in nature, it admits also a 
 
 This is ongoing joint work with Marco Zambon. 
 
-Contents: Based on a previous similar talk [Talk Slides](https://www.researchgate.net/publication/344044689_Gauge_transformations_of_multisymplectic_manifolds_and_L_infinity_observables)
+Contents: These slides are based on a previous similar talk [Talk Slides](https://www.researchgate.net/publication/344044689_Gauge_transformations_of_multisymplectic_manifolds_and_L_infinity_observables)
 
 
 Lenght: 25 minutes, 2-3 minutes per slides, 8-13 slides in total
