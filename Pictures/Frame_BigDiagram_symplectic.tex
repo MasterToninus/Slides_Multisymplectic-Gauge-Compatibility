@@ -29,58 +29,52 @@
     		\node (large) [rectangle,dashed, draw, fit=(A1) (A2) (A3),label=below:{\scriptsize{\emph{Lie algebras cat.}}}] {};
   		}]	
 %   execute at end picture={
-%     \node[label=below:{Symp.Mfds.},dashsquare=(tikz@f@1-1-1)(tikz@f@1-5-1)]{};
-%     \node[label=below:{Lie.Alg.oids},dashsquare=(tikz@f@1-1-5)(tikz@f@1-5-5)]{};
-%     \node[label=below:{Lie.Algs},dashsquare=(tikz@f@1-5-2)(tikz@f@1-2-4)]{};
+%     \node[label=below:{Symp.Mfds.},dashsquare=(tikz@f@1-1-1)(tikz@f@1-4-1)]{};
+%     \node[label=below:{Lie.Alg.oids},dashsquare=(tikz@f@1-1-4)(tikz@f@1-4-4)]{};
+%     \node[label=below:{Lie.Algs},dashsquare=(tikz@f@1-4-2)(tikz@f@1-2-4)]{};
 %		}
-		|[visible on=<1-10>]|\color{grey}{(M,\omega)}
-		\ar[drr,grey,visible on=<2-10>,rightsquigarrow,"\text{observables}",shift right=.5em]
-		\ar[rrrrr,grey,visible on=<3-10>,rightsquigarrow,"\text{twisted standard Lie algebroid}"]
-		\ar[dddd,grey,visible on=<7-10>,rightsquigarrow,sloped,"\text{gauge transf.}"']
+		|[visible on=<1-4>]|\color{grey}{(M,\omega)}
+		\ar[drr,grey,visible on=<1-4>,rightsquigarrow,"\text{observables}",shift right=.5em]
+		\ar[rrrrr,grey,visible on=<1-4>,rightsquigarrow,"\text{twisted standard Lie algebroid}"]
+		\ar[dddd,grey,visible on=<2-4>,rightsquigarrow,sloped,"\text{gauge transf.}"']
 		&[-1.5em] &[-1em] & & 
-		&[-4em] |[visible on=<3-10>]|\color{grey}(TM \oplus \mathbb{R},\rho, [\cdot,\cdot]_\omega)
-		\ar[dl,grey,visible on=<4-10>,rightsquigarrow]
-		\ar[dddd,grey,visible on=<9-10>,sloped,"\text{B-transf.}"]
+		&[-4em] |[visible on=<1-4>]|\color{grey}(TM \oplus \mathbb{R},\rho, [\cdot,\cdot]_\omega)
+		\ar[dl,grey,visible on=<1-4>,rightsquigarrow]
+		\ar[dddd,grey,visible on=<3-4>,sloped,"\text{B-transf.}"]
 %
 	\\[.5em]
 %
 		& \phantom{\big(}
-		& |[visible on=<2->,alias=A1]|\big(C^\infty(M),\lbrace\cdot,\cdot\rbrace_\omega\big) 
-		\ar[rr,visible on=<12->,"\Psi"]
-		\ar[dr,visible on=<5-11>,sloped,"\text{Preq}_\theta",xshift=.5em]	
-		\ar[ddrr,visible on=<12->,phantom,blue,"\circlearrowright"]
+		& |[visible on=<1->,alias=A1]|\big(C^\infty(M),\lbrace\cdot,\cdot\rbrace_\omega\big) 
+		\ar[rr,visible on=<1->,"\Psi"]
+		\ar[ddrr,visible on=<7->,phantom,blue,"\circlearrowright"]
 		&
-		& |[visible on=<4->]|\big(\Gamma(TM\oplus \mathbb{R}),[\cdot,\cdot]_\omega\big)
-		\ar[dd,sloped,"\sim",visible on=<10->]
+		& |[visible on=<1->]|\big(\Gamma(TM\oplus \mathbb{R}),[\cdot,\cdot]_\omega\big)
+		\ar[dd,sloped,"\sim",visible on=<4->]
 		&
 %		 
 	\\
 %
-		&|[visible on=<11->,alias=A2]|\mathfrak{g} \ar[ur,visible on=<11->]\ar[dr,visible on=<11->]& 
-		&
-		|[visible on=<5-11>]| Q(P,\theta) 
-		\ar[ur,visible on=<6-11>,hook] 
-		\ar[dr,visible on=<8-11>,hook]
-		& &
+		&|[visible on=<6->,alias=A2]|\mathfrak{g} \ar[ur,visible on=<6->]\ar[dr,visible on=<6->]& 
+		& & &
 %
 	\\
 %
-		& &|[visible on=<8->]|\big(C^\infty(M),\lbrace\cdot,\cdot\rbrace_{\tilde{\omega}}\big)
-		\ar[rr,visible on=<12->,"\Psi"]
-		\ar[ur,visible on=<8-11>,sloped,"\text{Preq}_\theta"',xshift=.5em]		
+		& &|[visible on=<2->]|\big(C^\infty(M),\lbrace\cdot,\cdot\rbrace_{\tilde{\omega}}\big)
+		\ar[rr,visible on=<2->,"\Psi"]	
 		& 
 		&
-		|[visible on=<8->,alias=A3]|\big(\Gamma(TM\oplus \mathbb{R}),[\cdot,\cdot]_{\tilde{\omega}}\big)
+		|[visible on=<2->,alias=A3]|\big(\Gamma(TM\oplus \mathbb{R}),[\cdot,\cdot]_{\tilde{\omega}}\big)
 		&
 %		
 	\\[.5em]
 %	
-		|[visible on=<7-10>]|\color{grey}(M,\tilde{\omega}) 
-		\ar[rrrrr,visible on=<8-10>,grey,rightsquigarrow]
-		\ar[urr,visible on=<8-10>,grey,rightsquigarrow,sloped,shift left=.5em]
+		|[visible on=<2-4>]|\color{grey}(M,\tilde{\omega}) 
+		\ar[rrrrr,visible on=<2-4>,grey,rightsquigarrow]
+		\ar[urr,visible on=<2-4>,grey,rightsquigarrow,sloped,shift left=.5em]
 		& \phantom{\big(} & & &
-		& |[visible on=<8-10>]|\color{grey}(TM \oplus \mathbb{R},\rho,[\cdot,\cdot]_{\tilde{\omega}}) 
-		\ar[ul,grey,visible on=<8-10>,rightsquigarrow]
+		& |[visible on=<2-4>]|\color{grey}(TM \oplus \mathbb{R},\rho,[\cdot,\cdot]_{\tilde{\omega}}) 
+		\ar[ul,grey,visible on=<2-4>,rightsquigarrow]
  	\end{tikzcd}	
 \end{document}
 
