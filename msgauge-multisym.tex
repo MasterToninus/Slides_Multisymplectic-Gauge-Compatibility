@@ -6,8 +6,8 @@
 \makeatother
 
 %- D0cum3nt ----------------------------------------------------------------------------------------------
-%\documentclass[beamer,10pt]{standalone}   
-\documentclass[beamer,10pt,handout]{standalone}  \Handouttrue  
+\documentclass[beamer,10pt]{standalone}   
+%\documentclass[beamer,10pt,handout]{standalone}  \Handouttrue  
 
 \ifHandout
 	\setbeameroption{show notes} %print notes   
@@ -234,18 +234,14 @@ associated to the untwisted ($\omega=0$) Vinogradov Algebroid, and $c_k$ is a nu
 %-------------------------------------------------------------------------------------------------------------------------------------------------
 \subsection{Rogers embedding}
 %-------------------------------------------------------------------------------------------------------------------------------------------------
-\begin{frame}[fragile]{Embedding observables $L_\infty$-algebra into Vinogradov $L_\infty$-algebra}
+\begin{frame}[fragile,t]{Embedding observables $L_\infty$-algebra into Vinogradov $L_\infty$-algebra}
 	Consider now $\omega$ \alert{$n$-plectic}
 	\vfill
 	\begin{center}
 		\includestandalone[width=.8\textwidth]{Pictures/Frame_Embedding_Diagram_k-plectic_V1}
 	\end{center}
 	\vfill
-	\only<1-3>{
-		.
-	}
-
-
+	\begin{minipage}[t][8.5em][t]{\textwidth}
 	\only<4->{
 	\begin{thmblock}[Embedding of $L_\infty$-algebras  $\Psi:L_\infty(M,\omega)\hookrightarrow L_{\infty}(E^n,\omega)$\quad \cite{Miti2021}.]
 	\begin{itemize}[leftmargin=0pt]
@@ -286,11 +282,16 @@ associated to the untwisted ($\omega=0$) Vinogradov Algebroid, and $c_k$ is a nu
             	 }}};
 		}			
 	}
-
-		
-
+	\end{minipage}
 \end{frame}
-\note{}
+\note[itemize]{
+	\item this is the "work in progress" part of the preprint.
+	\begin{itemize}
+		\item[-] In the 1-plectic case is extremely simple to check.
+		\item[-] The 2-plectic case has been constructed by Rogers in \cite{Rogers2010}.
+		\item[-] Argument about existence by Ritter and Saemann \cite{Ritter2015}.
+	\end{itemize}
+}
 %-------------------------------------------------------------------------------------------------------------------------------------------------
 
 

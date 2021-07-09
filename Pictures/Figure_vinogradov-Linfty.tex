@@ -1,5 +1,5 @@
 %+------------------------------------------------------------------------+
-%| Frame: Multisymplectic Manifold Definition
+%| Figure: Vinogradov-Zambon Linfinity algebra definition
 %| Author: Antonio miti
 %+------------------------------------------------------------------------+
 
@@ -8,6 +8,7 @@
 \usepackage{verbatim}
 \usetikzlibrary{arrows,shapes}
 \usepackage{tikz-cd}
+\usetikzlibrary{calc}
 \usepackage{amsmath}
 \usepackage{amssymb}
 
@@ -92,7 +93,7 @@
 % have to apply the 'overlay' style.
 \begin{tikzpicture}[overlay]
         \path[->] (n1) edge [bend right] (t1);
-        \path[->] (n2.north) edge (t2.south west);
+        \draw[->, rounded corners=6mm] (n2.north) -- ($(n2.north) + (0,5mm)$)  -- (t2.south west);
        % \path[->] (n3) edge [out=0, in=-90] (t3);
 \end{tikzpicture}
 

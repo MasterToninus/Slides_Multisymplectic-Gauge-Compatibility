@@ -6,8 +6,8 @@
 \makeatother
 
 %- D0cum3nt ----------------------------------------------------------------------------------------------
-%\documentclass[beamer,10pt]{standalone}   
-\documentclass[beamer,10pt,handout]{standalone}  \Handouttrue  
+\documentclass[beamer,10pt]{standalone}   
+%\documentclass[beamer,10pt,handout]{standalone}  \Handouttrue  
 
 \ifHandout
 	\setbeameroption{show notes} %print notes   
@@ -32,6 +32,10 @@
 
 \begin{document}
 \outline
+
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+\subsection{(Multi)-symplectic: mechanical perspective}
 %-------------------------------------------------------------------------------------------------------------------------------------------------
 \begin{frame}{Symplectic geometry (mechanical perspective)}
 \begin{columns}[T]
@@ -136,6 +140,12 @@
 	\end{block}
 	\vfill
 	\pause
+	\tcbset{colback=white,
+		colbacktitle=white,
+		colframe=red!70!black,
+		boxrule=1pt,
+		colupper=red!70!black,
+		arc=15pt}
 	\begin{tcolorbox}[enhanced,frame hidden,borderline={0.5pt}{0pt}{red,dashed}]
 		\color{red}
 		\begin{columns}[T]
@@ -146,6 +156,7 @@
 				\end{center}
 			\end{column}			
 			\begin{column}{.60\linewidth}
+				\vspace{-.4em}
 				\begin{center}
 					The lack of a satisfactory notion of observables hindered the spread of this formalism.
 				\end{center}
@@ -171,6 +182,7 @@
 			\end{column}			
 			\begin{column}{.60\linewidth}
 				\begin{center}
+					\vspace{-.4em}
 					{Why observables are so crucial?\qquad \qquad Quantization!}	
 				\end{center}
 			\end{column}			
@@ -197,7 +209,8 @@ manifold to any classical field system (e.g. a continuous medium like a filament
 }
 %-------------------------------------------------------------------------------------------------------------------------------------------------
 
-
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+\subsection{Observability}
 %-------------------------------------------------------------------------------------------------------------------------------------------------
 \begin{frame}{Observables in $n$-plectic geometry}
 	%
@@ -323,6 +336,7 @@ manifold to any classical field system (e.g. a continuous medium like a filament
 		};
 	\end{tikzpicture}
 	\vfill
+	\pause
 	\begin{tikzpicture}
 		\node [draw,blue,ellipse callout, minimum height=10em,minimum width=30em,callout relative pointer={(2,-.5)}] (L1) {};
 		\node [text width=25em,text centered] (L2) {
