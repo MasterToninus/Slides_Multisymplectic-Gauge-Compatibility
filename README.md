@@ -24,3 +24,13 @@ Contents: These slides are based on a previous similar talk [Talk Slides](https:
 
 Lenght: 25 minutes, 2-3 minutes per slides, 8-13 slides in total
 
+
+
+
+## Update - July 2021
+
+The slides in the state used for the presentation at the conference have been uploaded to [researchgate](https://www.researchgate.net/publication/353463068_Gauge_transformations_of_multisymplectic_manifolds_and_L_observables).
+
+The handout version of this presentation has not been completed yet.
+
+The goal is to write a long presentation with a complete handout when my transfer to Max Planck in Bonn is completed.
