@@ -23,12 +23,33 @@
 \usetikzlibrary{positioning, arrows}
 \usetikzlibrary{shapes}
 
+
 \providecommand{\pairing}{\langle\cdot,\cdot\rangle}
 \providecommand{\vHam}{\mathscr{v}}
 
 %--Beamer Style----------------------------------------------------------------------------------------
 \usetheme{toninus}
 \setbeamertemplate{section in toc}[sections numbered]
+
+
+
+\renewcommand{\checkpoint}[0]{
+	\setcounter{tocdepth}{1}
+	\addtocounter{framenumber}{-1}
+ 	\begin{frame}[t]{Outline}
+  		%\tableofcontents[currentsection,currentsubsection]
+  		%
+  		\tableofcontents[currentsection]
+		%
+		\begin{center}
+			\includegraphics[width=3.5cm]{Pictures/Figure_pentagondiagm_page}
+		\end{center}
+	\end{frame}
+}
+
+
+
+
 
 
 
@@ -40,6 +61,8 @@
 %- D0cum3nt ----------------------------------------------------------------------------------------------------------------------------------
 \begin{document}
 %-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 
 
 %-------------------------------------------------------------------------------------------------------------------------------------------------
@@ -235,6 +258,7 @@ Consider two \alert{gauge-related} symplectic mfd. $(M,\omega)$ and $ (M,\wideti
 			\par\noindent\rule{\textwidth}{0.4pt}			
 		}
 		\vspace{-1.5em}
+		\setcounter{tocdepth}{1}
 		\tableofcontents
 	}
 \end{frame}
@@ -461,8 +485,8 @@ Consider two \alert{gauge-related} symplectic mfd. $(M,\omega)$ and $ (M,\wideti
 	\end{defblock}
 
 	\begin{itemize}
-		\item<10-> $(n=1) ~ \Rightarrow$ standard twisted \emph{Lie algebroid};
-		\item<11-> $(n=2) ~ \Rightarrow$ standard twisted \emph{Courant algebroid};
+		\item<7-> $(n=1) ~ \Rightarrow$ standard twisted \emph{Lie algebroid};
+		\item<8-> $(n=2) ~ \Rightarrow$ standard twisted \emph{Courant algebroid};
 	\end{itemize}
 
 \end{frame}
@@ -650,7 +674,7 @@ Consider two \alert{gauge-related} symplectic mfd. $(M,\omega)$ and $ (M,\wideti
 			\begin{column}{.50\linewidth}
 				\centering \it
 				\onslide<3->{			
-				such that $\omega = \tilde{\omega} + d B$
+				such that $\omega = \tilde{\omega} - d B$
 				}
 			\end{column}	
 		\end{columns}	
@@ -683,7 +707,7 @@ Consider two \alert{gauge-related} symplectic mfd. $(M,\omega)$ and $ (M,\wideti
 					}		
 			\end{column}
 			\begin{column}{.625\linewidth}	
-					\onslide<6->{
+					\onslide<5->{
 						\begin{displaymath}
 						%
 						\begin{tikzcd}[baseline=(O.base),ampersand replacement=\&]
@@ -701,7 +725,7 @@ Consider two \alert{gauge-related} symplectic mfd. $(M,\omega)$ and $ (M,\wideti
 			\end{column}
 		\end{columns}
 		\bigskip
-		\only<6->{
+		\only<5->{
 			\begin{tikzpicture}[overlay,remember picture]
 			    	\path[->,opacity=0.3] (base.west) edge[bend left,blue](target.south east);
 		    \end{tikzpicture}		
@@ -816,19 +840,28 @@ Consider two \alert{gauge-related} symplectic mfd. $(M,\omega)$ and $ (M,\wideti
 		\includestandalone[width=.4\textwidth]{Pictures/hyb-Frame_multisym_B-transf}
 	\end{center}
 	\vfill
-	\onslide<4->{
+	\only<1>{
+	\begin{itemize}
+		\item Vinogradov alg.oids w.r.t cohomologous twisting closed forms are isomorphic.
+		\\
+		\small{(in a suitable sense)}
+	\end{itemize}	
+	}
+	%	
+	\onslide<3->{
 		\vspace{-1em}
 		\begin{thmblock}[There is a \textbf{strict} $L_\infty$-isomorphism.]	
 				\begin{displaymath}
 				%
-				\only<4>{
+				\only<3>{
 				\begin{tikzcd}[baseline=(O.base),ampersand replacement=\&]
 					|[alias=O]| 
 					(\varphi)				
 					~:\&[-3em] L_\infty(E^n,\omega) \ar[r,"\sim"]\& L_\infty(E^n,\tilde{\omega})
 				\end{tikzcd}	
+				\vspace{3.5em}
 				}
-				\onslide<5->{
+				\only<4->{
 				\begin{tikzcd}[baseline=(O.base),ampersand replacement=\&]
 					|[alias=O]| 
 					(\varphi)				
@@ -862,22 +895,19 @@ Consider two \alert{gauge-related} symplectic mfd. $(M,\omega)$ and $ (M,\wideti
 	Consider now $\omega$ \alert{n-plectic} \quad and \quad \alert{$\tilde{\omega}=\omega + d B$}:
 	\vfill
 	%
+	\only<2->{\vspace{-2em}}
 	\begin{center}
-		\includestandalone[width=.8\textwidth]{Pictures/Frame_Gauge_Diagram_k-plectic}
+		\includestandalone[width=.8\textwidth]{Pictures/hyb-Frame_Gauge_Diagram_k-plectic}
 	\end{center}	
+	%
+	\only<2->{\vspace{-2em}}
 	%
 	\vfill
 	%
-	
-
 	\begin{itemize}
-	\only<1-3>{
-		\item<2-> Vinogradov alg.oids w.r.t cohomologous twisting closed forms are isomorphic.
-		\item<3-> Induced isomorphism at the level of $L_\infty$-algebras
-	}
-	\only<4->{
-		\item<4-> Consider a Lie algebra action $\mathfrak{g}\to \mathfrak{X}(M)$ admitting HCMM w.r.t $\omega$ and $\tilde{\omega}$
-	}
+		\item<2-> Vinogradov $L_\infty$-algebras w.r.t cohomologous twisting forms are isomorphic.
+		\item<2-> Rogers $L_\infty$ embeds into Vinogradov $L_\infty$.
+		\item<3-> Consider a Lie algebra action $\mathfrak{g}\to \mathfrak{X}(M)$ admitting HCMM w.r.t $\omega$ and $\tilde{\omega}$
 	\end{itemize}
 
 	\vfill
@@ -888,7 +918,7 @@ Consider two \alert{gauge-related} symplectic mfd. $(M,\omega)$ and $ (M,\wideti
 		colupper=blue!70!black,
 		arc=15pt,
 		}
-	\onslide<5->{
+	\onslide<4->{
 	\begin{tcolorbox}[sidebyside,righthand width=.75\linewidth]
 		Thm: \cite{Miti2021}
 		\tcblower

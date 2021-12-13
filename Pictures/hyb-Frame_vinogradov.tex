@@ -53,9 +53,9 @@
 		   		 \onslide<2->{Vector bun.} \only<2>{$E$}\onslide<3->{$E=TM\oplus (\wedge^{n-1}T^\ast M)$;}
 		\\
 		\tikz[na]\node [scale=0.5,coordinate,fill=green!20,draw,circle] (n2) {};	    
-		    		\onslide<4->{anchor}
-		    		\only<4>{ $\rho$}
-		    		\onslide<5->{
+		    		\onslide<3->{anchor}
+		    		\only<3>{ $\rho$}
+		    		\onslide<4->{
 						\begin{tikzcd}[baseline=(O.base),ampersand replacement=\&]
 							|[alias=O]|\rho~:\&[-3em] E \ar[r]\& TM
 							\\[-2em]
@@ -68,8 +68,8 @@
 	\begin{minipage}[t]{\textwidth}
 		\tikzstyle{na} = [baseline=-.5ex]
 		\qquad\quad\tikz[na]\node [scale=0.5,coordinate,fill=orange!20,draw,circle] (n3) {};	    
-		\onslide<6->{pairing}
-		\onslide<7->{		
+		\onslide<4->{pairing}
+		\onslide<5->{		
 			\begin{tikzcd}[baseline=(O.base),ampersand replacement=\&]
 				|[alias=O]|\pairing_{\pm}~:\&[-4em] E\otimes E \ar[r]\& \wedge^{n-2}T^\ast M
 				\\[-2em]
@@ -80,8 +80,8 @@
 		}
 		\\[.5em]
 		\tikz[na]\node [scale=0.5,coordinate,fill=red!20,draw,circle] (n4) {};	    
-		\onslide<8->{(higher) Courant bracket}
-		\onslide<9->{		
+		\onslide<5->{(higher) Courant bracket}
+		\onslide<6->{		
 			\begin{displaymath}
 				\begin{tikzcd}[ampersand replacement=\&]
 					\lbrack\cdot,\cdot\rbrack_\omega~:\&[-4em] E\otimes E \ar[r]\& \wedge^{n-2}T^\ast M
@@ -102,9 +102,9 @@
 % have to apply the 'overlay' style.
 \begin{tikzpicture}[overlay]
         \onslide<2->{\path[->,opacity=0.3] (n1) edge [bend right] (t1);}
-        \onslide<4->{\path[->,opacity=0.3] (n2) edge [bend left] (t2);}
-        \onslide<6->{\path[->,opacity=0.3] (n3) edge [bend left] (t3.south);}
-        \onslide<8->{\path[->,opacity=0.3] (n4) edge [bend left] (t4.south);}
+        \onslide<3->{\path[->,opacity=0.3] (n2) edge [bend left] (t2);}
+        \onslide<4->{\path[->,opacity=0.3] (n3) edge [bend left] (t3.south);}
+        \onslide<5->{\path[->,opacity=0.3] (n4) edge [bend left] (t4.south);}
        % \path[->] (n3) edge [out=0, in=-90] (t3);
 \end{tikzpicture}
 

@@ -26,26 +26,45 @@
 	\begin{tikzcd}[
 		column sep= small,row sep=small,
 		/tikz/execute at end picture={
-    		\node (large) [rectangle,dashed, draw, fit=(A1) (A2),label=below:{\scriptsize$L_\infty$-algebras cat.}] {};
+    		\node (large) [rectangle,dashed, draw, fit=(A1) (A2) (A3),label=below:{\scriptsize$L_\infty$-algebras cat.}] {};
   		}]		
+		|[visible on=<1>]| \color{grey}{(M,\omega)} 
+		\ar[drr,grey,visible on=<1>,rightsquigarrow,"\text{observables}"]
+		\ar[rrrr,grey,visible on=<1>,rightsquigarrow,"\text{twisted standard Vinogradov algebroid}"]
+		\ar[dddd,grey,visible on=<1>,rightsquigarrow,sloped,"\text{gauge transf.}"']
+		&[-1.5em] & &[2em] 
 		&[-3em] |[visible on=<1>]| \color{grey}{(E^n,\rho,\langle\cdot,\cdot\rangle,[\cdot,\cdot]_\omega)}
 		\ar[dl,grey,visible on=<1>,rightsquigarrow]
-		\ar[ddd,grey,visible on=<1>,sloped,"\cong","\text{B-transf.}"']
+		\ar[dddd,grey,visible on=<1>,sloped,"\cong","\text{B-transf.}"']
 %
 	\\
 %
-		|[visible on=<1->,alias=A1]| L_{\infty}\big(E^n,\omega\big)
-		\ar[d,sloped,line width=0.8pt,color=green!60!black,"\cong", visible on=<3->]
+		& \phantom{\big(}
+		& |[visible on=<1->,alias=A1]| L_{\infty}(M,\omega)
+		\ar[r,visible on=<2->,line width=0.8pt,color=blue!60!black,"\Psi"]
+		\ar[ddr,visible on=<4->,phantom,blue,"\circlearrowright"]
+		& |[visible on=<1->]| L_{\infty}\big(E^n,\omega\big)
+		\ar[dd,sloped,"\cong", visible on=<2->]
 		&
 %		 
-	\\[1.5em]
+	\\
 %
-		|[visible on=<1->,alias=A2]| L_{\infty}\big(E^n,{\tilde{\omega}}\big)
+		&|[visible on=<3->,alias=A2]|\mathfrak{g} \ar[ur,visible on=<3->]\ar[dr,visible on=<3->]& & & 
+%
+	\\
+%
+		& &|[visible on=<1->]| L_{\infty}(M,\tilde{\omega})
+		\ar[r,visible on=<2->,line width=0.8pt,color=blue!60!black,"\Psi"]& 
+		|[visible on=<1->,alias=A3]| L_{\infty}\big(E^n,{\tilde{\omega}}\big)
 		&
 %		
 	\\
 %	
-		& |[visible on=<1>]| \color{grey}{(E^n,\rho,\pairing,[\cdot,\cdot]_{\tilde{\omega}})}
+		|[visible on=<1>]| \color{grey}{(M,\tilde{\omega})}
+		\ar[rrrr,grey,visible on=<1>,rightsquigarrow,"\text{ }"]
+		\ar[urr,grey,visible on=<1>,rightsquigarrow,"\text{ }"]
+		& \phantom{\big(} & & 
+		& |[visible on=<1>]| \color{grey}{(E^n,[\cdot,\cdot]_{\tilde{\omega}})}
 		\ar[ul,grey,visible on=<1>,rightsquigarrow]
  	\end{tikzcd}	
 
