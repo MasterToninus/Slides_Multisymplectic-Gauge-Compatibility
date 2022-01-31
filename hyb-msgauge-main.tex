@@ -16,16 +16,15 @@
 
 
 %- Packages -------------------------------------------------------------------------------------------
-\usepackage{../custom-style}
+\usepackage{custom-style}
 \usepackage{multicol}
 \usepackage{stmaryrd}
 \usepackage{animate}
 \usetikzlibrary{positioning, arrows}
 \usetikzlibrary{shapes}
+\usepackage{fontawesome}
 
 
-\providecommand{\pairing}{\langle\cdot,\cdot\rangle}
-\providecommand{\vHam}{\mathscr{v}}
 
 %--Beamer Style----------------------------------------------------------------------------------------
 \usetheme{toninus}
@@ -33,6 +32,10 @@
 
 
 
+%-- Macros ----------------------------------------------------------------------------------------
+
+\providecommand{\pairing}{\langle\cdot,\cdot\rangle}
+\providecommand{\vHam}{\mathscr{v}}
 \renewcommand{\checkpoint}[0]{
 	\setcounter{tocdepth}{1}
 	\addtocounter{framenumber}{-1}
@@ -512,7 +515,7 @@ Consider two \alert{gauge-related} symplectic mfd. $(M,\omega)$ and $ (M,\wideti
 			\node[rounded corners,
                  fill=gray!1,draw=gray!30,anchor=base]            
             	 (base) at ($(current page.south)+(0,.5)$) [rotate=-0,text width=10cm,align=center] { \footnotesize{\color{gray}{
-            	 $e_i = \pair{X_i}{\alpha_i} \in \mathfrak{X}(M)\oplus \Omega^{n-1}(M)$ 
+            	 $e_i = \binom{X_i}{\alpha_i} \in \mathfrak{X}(M)\oplus \Omega^{n-1}(M)$ 
             	 \quad~,\qquad
             	 $f_i \in \bigoplus_{k=0}^{n-2}\Omega^k(M)$.
             	 }}};
@@ -748,7 +751,7 @@ Consider two \alert{gauge-related} symplectic mfd. $(M,\omega)$ and $ (M,\wideti
 	%
 	\only<2->{\vspace{-2em}}
 	\begin{center}
-		\includestandalone[width=.9\textwidth]{Pictures/hyb-Frame_Diagram_checkpoint}
+		%\includestandalone[width=.9\textwidth]{Pictures/hyb-Frame_Diagram_checkpoint}
 	\end{center}	
 	\vfill
 	\vspace{-2em}
@@ -870,8 +873,8 @@ Consider two \alert{gauge-related} symplectic mfd. $(M,\omega)$ and $ (M,\wideti
 					\varphi_1				
 					~:\&[-3em] \left(\mathcal{V}^n\right)_0 \ar[r,"\sim"] \& (\widetilde{\mathcal{V}}^n)_0=\mathfrak{X}(M)\oplus\Omega^{n-1}(M)
 					\\[-2em]
-					\& \pair{x}{\alpha} \ar[r,mapsto] \&
-					\pair{x}{\alpha +\iota_x B}
+					\& \binom{x}{\alpha} \ar[r,mapsto] \&
+					\binom{x}{\alpha +\iota_x B}
 				\end{tikzcd}	
 				}
 				\end{displaymath}
