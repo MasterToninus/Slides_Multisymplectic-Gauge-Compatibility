@@ -34,3 +34,9 @@ The slides in the state used for the presentation at the conference have been up
 The handout version of this presentation has not been completed yet.
 
 The goal is to write a long presentation with a complete handout when my transfer to Max Planck in Bonn is completed.
+
+
+# Update - June 2022
+A 1 hour talk by M.Z. based on the same work has been recorded on [YouTube](http://www.youtube.com/watch?v=weEVJ57b_No)
+
+
