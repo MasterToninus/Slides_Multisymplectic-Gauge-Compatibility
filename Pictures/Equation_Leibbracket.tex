@@ -1,0 +1,20 @@
+%+------------------------------------------------------------------------+
+%| Diagram: Definition of Leibniz bracket of observables in a diagram
+%| Author: Antonio miti
+%+------------------------------------------------------------------------+
+
+
+\documentclass[tikz]{standalone}
+\usepackage{tikz-cd}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\RequirePackage[cal=boondox,scr=boondoxo]{mathalfa}
+\usepackage{stmaryrd}
+
+\begin{document}
+	\begin{tikzcd}[column sep= small,row sep=0ex]
+		\llbracket\cdot,\dots,\cdot\rrbracket ~\colon&[-1em] \left(\Omega^{n-1}_{ham}(M,\omega)\right)^{\otimes 2} 	\arrow[r]& 				\Omega^{n-1}_{ham}(M,\omega) \\[-1ex]
+		& \sigma_1\otimes \sigma_2 	\ar[r, mapsto]& 
+		\mathcal{L}_{\mathscr{v}_{\sigma_1}} \sigma_2
+	\end{tikzcd}
+\end{document}
