@@ -227,7 +227,7 @@ Multisymplectic observables and higher Courant algebroids
 			\item<2-> \alert<2>{... and also a (standard twisted) Lie Algebroid}.
 			\item<3-> A Lie algebroid is a "controlled" $\infty$-dimensional Lie algebra given (in this case) by
 			\begin{displaymath}
-					\left[\binom{x_1}{f_1},\binom{x_2}{f_2}\right]
+					\left[\binom{x_1}{f_1},\binom{x_2}{f_2}\right]_\omega
 					~=~
 					\binom{[x_1,x_2]}{x_1(f_2)-x_2(f_1)-\omega(x_1,x_2)}
 				\end{displaymath}
@@ -498,6 +498,27 @@ Consider two \alert{gauge-related} symplectic mfd. $(M,\omega)$ and $ (M,\wideti
 		\includestandalone[width=0.95\textwidth]{Pictures/Figure_multisym}	
 	\end{defblock}
 	%
+	\pause
+	%
+	\begin{defblock}[Non-degenerate $(n+1)$-form]
+		\begin{columns}
+			\begin{column}{.45\linewidth}
+				\centering{
+				The $\omega^\flat$ (flat) bundle map is injective.
+				}
+			\end{column}
+			\begin{column}{.5\linewidth}
+						\vspace{-.5em}
+				\[
+				\begin{tikzcd}[column sep= small,row sep=0ex,
+				/tikz/column 1/.append style={anchor=base east}]
+				    \omega^\flat \colon T M \ar[r]& \Lambda^n T^\ast M \\
+  						 (x,u) \ar[r, mapsto]& (x,\iota_{u} \omega_x)						
+				\end{tikzcd}	
+				\]
+			\end{column}
+		\end{columns}
+	\end{defblock}		
 	\vfill
 	%
 	%
@@ -510,7 +531,10 @@ Consider two \alert{gauge-related} symplectic mfd. $(M,\omega)$ and $ (M,\wideti
 		\end{itemize}
 	\end{block}			 
 %
-	\pause
+
+\end{frame}
+
+\begin{frame}[fragile]{Multisymplectic manifolds - motivations} %Fragile -->workaround tikzcd
 	\begin{block}{Historical motivation}
 		Mechanics: geometrical foundations of \textit{(first-order)} field theories.
 		\begin{itemize}
@@ -520,7 +544,73 @@ Consider two \alert{gauge-related} symplectic mfd. $(M,\omega)$ and $ (M,\wideti
 		 \\ $\cdots$
 		\end{itemize}
 	\end{block}
+	%
+	\pause
+	\begin{table}
+		\ifHandout
+		%
+		\else
+		\only<2>{
+		\begin{tabular}{|p{0.2\textwidth}|p{0.3\textwidth}|p{0.35\textwidth}|} 
+            \hline
+            \parbox[][20pt][c]{0.2\textwidth}{mechanics} & \multicolumn{2}{c|}{geometry} \\
+            \hline
+            \parbox[][20pt][c]{0.2\textwidth}{phase space} & symplectic manifold &  \\[.25em]
+            \parbox[][20pt][c]{0.2\textwidth}{classical \\ observables} & Poisson algebra &  \\[.25em]
+            \parbox[][20pt][c]{0.2\textwidth}{symmetries} &  group actions admitting comoment map &  
+            \\
+            \hline
+  \multicolumn{1}{c}{}
+            &  \multicolumn{1}{@{}c@{}}{$\underbrace{\hspace*{.3\textwidth}}_{\text{point-like particles systems}}$} 
+            &  \multicolumn{1}{@{}c@{}}{}              \\
+		\end{tabular}
+		}
+		\fi
+		\onslide<3->{
+		\begin{tabular}{|p{0.2\textwidth}|p{0.3\textwidth}|p{0.35\textwidth}|} 
+            \hline
+            \parbox[][20pt][c]{0.2\textwidth}{mechanics} & \multicolumn{2}{c|}{geometry} \\
+            \hline
+            \parbox[][20pt][c]{0.2\textwidth}{phase space} & symplectic manifold & multisymplectic manifold \\[.25em]
+            \parbox[][20pt][c]{0.2\textwidth}{classical \\ observables} & Poisson algebra & $L_\infty$-algebra \\[.25em]
+            \parbox[][20pt][c]{0.2\textwidth}{symmetries} &  group actions admitting comoment map & group actions admitting (homotopy) comomentum map
+            \\
+            \hline
+  			\multicolumn{1}{c}{}
+            &  \multicolumn{1}{@{}c@{}}{$\underbrace{\hspace*{.3\textwidth}}_{\text{point-like particles systems}}$} 
+            &
+            \multicolumn{1}{@{}c@{}}{$\underbrace{\hspace*{.3\textwidth}}_{\text{field-theoretic systems}}$} 
+               \\
+		\end{tabular}
+		}
+	\end{table}		 
+ 
+ 
+	
+%
 \end{frame}
+\note[itemize]{
+	\item Multisymplectic ($n$-plectic) geometry is a generalization of symplectic geometry where a closed, non degenerate $n+1$-form $(n\geq 1)$  takes the place of the symplectic 2-form
+	
+	\item multisymplectic means \emph{going higher} in the degree of $\omega$
+	
+	\item non degeneracy means $\iota_v\omega = 0 \Leftrightarrow v=0$.
+	
+	\item examples: 
+	\\1-plectic $=$ symplectic, 
+	\\any oriented $(n+1)$-dimensional manifold is $n$-plectic w.r.t. the volume form
+	\\the multicotangent bundle $\Lambda^n T^\ast Q$ is naturally $n$-plectic (see frame extra-\ref{Frame:Ms-Field-Mechanics})
+	
+	\item Observe also that, by degree reason, when $n$ is equal to $1$ or $dim(M)+1$ an injective flat map $\flat$ is also bijective.
+	
+	\item It is important to stress that mechanical systems are not the only source instances of this class of of structures. 
+				e.g. any semisimple Lie groups has associated a 2-plectic structure and any oriented $n+1$ dimensional manifold is naturally $n$-plectic.
+				
+
+}
+%---------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 
 
 %-------------------------------------------------------------------------------------------------------------------------------------------------
@@ -539,27 +629,6 @@ Consider two \alert{gauge-related} symplectic mfd. $(M,\omega)$ and $ (M,\wideti
 
 
 \begin{frame}{Hamiltonian forms}
-	\only<1>{
-	\medskip
-	\begin{columns}[T]
-		\setlength{\belowdisplayskip}{5pt}
-		\begin{column}{.50\linewidth}
-			\centering \it
-			$-$ symplectic case $-$
-			\vspace{20em}		
-		\end{column}	
-		%
-		\onslide{\vrule{}}
-		%
-		\begin{column}{.50\linewidth}
-			\centering \it
-			$-$ $n$-plectic case $-$
-			\vspace{20em}		
-		\end{column}	
-	\end{columns}
-	}
-	\pause
-	%
 	\begin{defblock}[Hamiltonian $(n-1)$-forms]
 		\begin{displaymath}
 			\Omega^{n-1}_{ham}(M,\omega) 	:=
@@ -572,6 +641,9 @@ Consider two \alert{gauge-related} symplectic mfd. $(M,\omega)$ and $ (M,\wideti
 				~\biggr\} 
 			\end{displaymath}
 	\end{defblock}
+	\pause
+	%
+
 	%
 	\onslide<2>{
 		\tikz[overlay,remember picture]
@@ -706,7 +778,7 @@ Consider two \alert{gauge-related} symplectic mfd. $(M,\omega)$ and $ (M,\wideti
 		\hspace{.25em} Is a cochain-complex $(L,\{\cdot\}_1)$ \\
 		\vspace{-1em}
 		\begin{center}
-			\includestandalone{Pictures/hyb-Frame_Observables}
+			\includestandalone{Pictures/Frame_Observables}
 		\end{center}
 		\onslide<2->{
 			\bigskip
@@ -764,12 +836,12 @@ Consider two \alert{gauge-related} symplectic mfd. $(M,\omega)$ and $ (M,\wideti
 %-------------------------------------------------------------------------------------------------------------------------------------------------
 \begin{frame}[t]{Vinogradov Algebroids}
 	\begin{defblock}[Vinogradov algebroid (higher Courant)]
-		\includestandalone[width=0.95\textwidth]{Pictures/hyb-Frame_vinogradov}		
+		\includestandalone[width=0.95\textwidth]{Pictures/Frame_vinogradov}		
 	\end{defblock}
 	\vfill
 	\begin{itemize}
-		\item<7-> $(n=1) ~ \Rightarrow$ standard twisted \emph{Lie algebroid};
-		\item<8-> $(n=2) ~ \Rightarrow$ standard twisted \emph{Courant algebroid};
+		\item<6-> $(n=1) ~ \Rightarrow$ standard twisted \emph{Lie algebroid};
+		\item<7-> $(n=2) ~ \Rightarrow$ standard twisted \emph{Courant algebroid};
 	\end{itemize}
 
 \end{frame}
@@ -786,10 +858,10 @@ Consider two \alert{gauge-related} symplectic mfd. $(M,\omega)$ and $ (M,\wideti
 	%
 	\pause
 	\begin{defblock}[Vinogradov $L_\infty$-algebra (Zambon) \cite{Zambon2012}]
-		\includestandalone[width=0.95\textwidth]{Pictures/hyb-Frame_vinogradov-Linfty}	
+		\includestandalone[width=0.95\textwidth]{Pictures/Frame_vinogradov-Linfty}	
 	\end{defblock}
 	\vfill
-	\only<5->{
+	\only<6->{
 		\tikz[overlay,remember picture]
 		{
 			\node[rounded corners,
@@ -1029,7 +1101,7 @@ Consider two \alert{gauge-related} symplectic mfd. $(M,\omega)$ and $ (M,\wideti
 	\begin{itemize}[leftmargin=0pt]
 		\item[$\cdot$]<5-> 
 			consider the graded vector subspace $\mathcal{A}$
-			\onslide<6->{
+			\onslide<5->{
 				\begin{displaymath}
 				\mathclap{
 				{\mathcal{A}^k} =
@@ -1250,229 +1322,6 @@ The pentagon commutes.
 %-------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-\begin{frame}[fragile]{Multisymplectic manifolds} %Fragile -->workaround tikzcd
-	\begin{defblock}[$n$-plectic manifold ~\emph{(Cantrijn, Ibort, De Le\'on)} \cite{Cantrun2017}]
-		\includestandalone[width=0.95\textwidth]{Pictures/Figure_multisym}	
-	\end{defblock}
-	%
-	\begin{defblock}[Non-degenerate $(n+1)$-form]
-		\begin{columns}
-			\begin{column}{.45\linewidth}
-				\centering{
-				The $\omega^\flat$ (flat) bundle map is injective.
-				}
-			\end{column}
-			\begin{column}{.5\linewidth}
-						\vspace{-.5em}
-				\[
-				\begin{tikzcd}[column sep= small,row sep=0ex,
-				/tikz/column 1/.append style={anchor=base east}]
-				    \omega^\flat \colon T M \ar[r]& \Lambda^n T^\ast M \\
-  						 (x,u) \ar[r, mapsto]& (x,\iota_{u} \omega_x)						
-				\end{tikzcd}	
-				\]
-			\end{column}
-		\end{columns}
-	\end{defblock}
-	%
-	\vfill
-	%
-	\begin{block}{Examples:}
-		\vspace{-.5em}
-		\setbeamercovered{transparent}
-		\begin{itemize}[<+->]
-			\item[$\bullet$] $n=1$ \qquad\qquad\qquad $\Rightarrow$\quad $\omega$ is a symplectic form
-			\item[$\bullet$]  $n=(dim(M)-1)$ \quad$\Rightarrow$\quad $\omega$ is a volume form
-			%Any oriented $(n+1)$-dimensional manifold is $n$-plectic w.r.t. the volume form.
-			%\item[$\bullet$] Let $G$ a semisimple Lie group and $\langle\cdot,\cdot \rangle$  its killing form. Then $\langle [\cdot,\cdot],\cdot \rangle$ extends to a biinvariant multisymplectic form $\omega$.
-			\item[$\bullet$] Let $Q$ a smooth manifold, the multicotangent bundle $\Lambda^n T^\ast Q$ is naturally $n$-plectic.%
-			\quad
-			\textit{(cfr, \href{https://arxiv.org/abs/physics/9801019}{GIMMSY} construction for classical field theories)}
-		\end{itemize}
-	\end{block}			 
-	
-%
-\end{frame}
-\note[itemize]{
-	\item Multisymplectic ($n$-plectic) geometry is a generalization of symplectic geometry where a closed, non degenerate $n+1$-form $(n\geq 1)$  takes the place of the symplectic 2-form
-	
-	\item multisymplectic means \emph{going higher} in the degree of $\omega$
-	
-	\item non degeneracy means $\iota_v\omega = 0 \Leftrightarrow v=0$.
-	
-	\item examples: 
-	\\1-plectic $=$ symplectic, 
-	\\any oriented $(n+1)$-dimensional manifold is $n$-plectic w.r.t. the volume form
-	\\the multicotangent bundle $\Lambda^n T^\ast Q$ is naturally $n$-plectic (see frame extra-\ref{Frame:Ms-Field-Mechanics})
-	
-	\item Observe also that, by degree reason, when $n$ is equal to $1$ or $dim(M)+1$ an injective flat map $\flat$ is also bijective.
-	
-	\item It is important to stress that mechanical systems are not the only source instances of this class of of structures. 
-				e.g. any semisimple Lie groups has associated a 2-plectic structure and any oriented $n+1$ dimensional manifold is naturally $n$-plectic.
-				
-
-}
-%---------------------------------------------------------------------------------------------------------------------------------------------------
-
-%-------------------------------------------------------------------------------------------------------------------------------------------------
-\begin{frame}{From symplectic to {multi}symplectic} 
-	%
-	\begin{center}
-		$-$ \emph{multisymplectic means \textbf{going higher} in the degree of $\omega$} $-$
-	\end{center}
-	\pause
-	\begin{defblock}[$n$-plectic manifold ~\emph{(Cantrijn, Ibort, De Le\'on)} \cite{Cantrun2017}]
-		\includestandalone[width=0.95\textwidth]{Pictures/Figure_multisym}	
-	\end{defblock}
-	%
-	\pause
-		\begin{table}
-			\begin{tabular}{c c c}
-				symplectic forms \small($n=1$) & $\leftrightsquigarrow$ & volume forms \small($n= \text{dim}(M)-1$)
-			\end{tabular}
-		\end{table}
-
-	\vfill
-	\pause
-	\begin{block}{Historical motivation}
-		Mechanics: geometrical foundations of \textit{(first-order)} field theories.
-	\end{block}
-	%
-	\begin{table}
-		\ifHandout
-		%
-		\else
-		\only<4>{
-		\begin{tabular}{|p{0.2\textwidth}|p{0.3\textwidth}|p{0.35\textwidth}|} 
-            \hline
-            \parbox[][20pt][c]{0.2\textwidth}{mechanics} & \multicolumn{2}{c|}{geometry} \\
-            \hline
-            \parbox[][20pt][c]{0.2\textwidth}{phase space} & symplectic manifold &  \\[.25em]
-            \parbox[][20pt][c]{0.2\textwidth}{classical \\ observables} & Poisson algebra &  \\[.25em]
-            \parbox[][20pt][c]{0.2\textwidth}{symmetries} &  group actions admitting comoment map &  
-            \\
-            \hline
-  \multicolumn{1}{c}{}
-            &  \multicolumn{1}{@{}c@{}}{$\underbrace{\hspace*{.3\textwidth}}_{\text{point-like particles systems}}$} 
-            &  \multicolumn{1}{@{}c@{}}{}              \\
-		\end{tabular}
-		}
-		\fi
-		\onslide<5->{
-		\begin{tabular}{|p{0.2\textwidth}|p{0.3\textwidth}|p{0.35\textwidth}|} 
-            \hline
-            \parbox[][20pt][c]{0.2\textwidth}{mechanics} & \multicolumn{2}{c|}{geometry} \\
-            \hline
-            \parbox[][20pt][c]{0.2\textwidth}{phase space} & symplectic manifold & multisymplectic manifold \\[.25em]
-            \parbox[][20pt][c]{0.2\textwidth}{classical \\ observables} & Poisson algebra & $L_\infty$-algebra \\[.25em]
-            \parbox[][20pt][c]{0.2\textwidth}{symmetries} &  group actions admitting comoment map & group actions admitting (homotopy) comomentum map
-            \\
-            \hline
-  			\multicolumn{1}{c}{}
-            &  \multicolumn{1}{@{}c@{}}{$\underbrace{\hspace*{.3\textwidth}}_{\text{point-like particles systems}}$} 
-            &
-            \multicolumn{1}{@{}c@{}}{$\underbrace{\hspace*{.3\textwidth}}_{\text{field-theoretic systems}}$} 
-               \\
-		\end{tabular}
-		}
-	\end{table}	
-
-
-
-
-\end{frame}
-\note[itemize]{
-	\item Historically, the interest in multisymplectic manifolds, has been motivated by the need for understanding the geometrical foundations of first-order classical field theories.
-	The key point is that, just as one can associate a symplectic manifold to an ordinary classical mechanical system (e.g. a single
-point-like particle constrained to some manifold), it is possible to associate a multisymplectic
-manifold to any classical field system (e.g. a continuous medium like a filament or a fluid). See frame Extra-\ref{Frame:Ms-Field-Mechanics} 
-	
-	\item General ideas basic parallelisms with caveats
-	\item caveat: points in multiphase spaces are not states
-	\item the table hides the duality between geometric and algebraic approaches to the problem.
-	\item	Mechanics: geometrical foundations of \textit{(first-order)} field theories.
-		\begin{itemize}
-		 \item[-] Kijowski, W. Tulczyjew \cite{Kijowski1979}; %(1979)
-		 \item[-] Cariñena, Crampin, Ibort \cite{Carinena1991b};% (1991)
-		 \item[-] Gotay, Isenberg, Marsden, Montgomery \cite{Gimmsy1};%(1998)
-		 \\ $\cdots$
-		\end{itemize}
-}
-%-------------------------------------------------------------------------------------------------------------------------------------------------
-
-%------------------------------------------------------------------------------------------------
-\begin{frame}[fragile]{MS geometry and classical field mechanics}\label{Frame:Ms-Field-Mechanics}
-		Consider a smooth manifold $Y$,
-		\begin{columns}
-			\hfill
-			\begin{column}{.5\linewidth}
-				\emph{Multicotangent bundle} $\bigwedge = \bigwedge^n T^\ast Y$\\
-				is naturally $n$-plectic
-			\end{column}
-			\begin{column}{.4\linewidth}
-				\[
-				\begin{tikzcd}
-					\Lambda \ar[d,"\pi"'] & T \Lambda \ar[d,"T \pi"] \ar[l] \\
-					Y								& T Y \ar[l]
-				\end{tikzcd}	
-				\]
-			\end{column}
-		\end{columns}
-	\pause
-	\begin{defblock}[Tautological $n$-form]
-		$\theta \in \Omega^n(\Lambda)$ such that:
-		\begin{displaymath}
-		\begin{split}
-			\left[ \iota_{u_1 \wedge \ldots \wedge u_n} \theta \right]_\eta 
-			&= \iota_{(T \pi)_\ast u_1 \wedge \ldots \wedge (T \pi)_\ast u_n} \eta \\
-			&= \iota_{u_1 \wedge \ldots \wedge u_n} \pi^\ast \eta 
-			\qquad \qquad \forall \eta \in \Lambda \, , \: \forall u_i \in T_\eta \Lambda 		
-		\end{split}
-		\end{displaymath}
-	\end{defblock}
-	\vfill
-	\begin{columns}
-		\begin{column}{.6\linewidth}
-			\begin{defblock}[Tautological (multisymplectic) (n+1)-form]
-				$$\omega := d \theta$$
-			\end{defblock}
-		\end{column}
-		\begin{column}{.4\linewidth}
-		 	\begin{claimblock}$\omega$ is not degenerate.\end{claimblock}	
-		\end{column}
-	\end{columns}	
-	\pause
-	\begin{keywordblock}
-		\begin{tabular}{|c|c|c|}
-			\hline 
-			point-particles mechanics & $\rightsquigarrow$ & classical fields mechanics \\
-			%(finite discrete DOF) & & (finite dimensional continuous DOF) \\
-			\hline 
-			symplectic & $\rightsquigarrow$ & multisymplectic \\ 
-			\hline 
-			Observables (Poisson) algebra & $\rightsquigarrow$ & Observables $L-\infty$ algebra
-			 \\ 
-			\hline 
-			Co-moment map & $\rightsquigarrow$ & Homotopy co-momentum map \\ 
-			\hline 
-		\end{tabular} 
-	\end{keywordblock}
-
-	
-\end{frame}
-\note[itemize]{
-	\item This example is significant from the perspective of geometric classical field theory:
-		\begin{displaymath}
-			\frac{\text{classical mechanics}}{\text{symplectic geo.}} =
-			\frac{\text{classical field mechanics}}{\text{multisymplectic geo.}}
-		\end{displaymath}
-	\item Multicotangent bundle is the \emph{Higher analogue} of the cotangent bundle.
-	(but it is not yet the analogue of a \emph{phase space}.)
-\item The multiphase space is the sub-bundle of $n$-forms vanishing when contracted with 2 vertical fields.
-  	\item The reason why this sub-bundle has a particular role is that it can be proved to be isomorphic to a suitable dual of the first Jet bundle.
-  	\item For further details see Gotay et al. \href{https://arxiv.org/abs/physics/9801019}{arXiv:physics/9801019}. For a pictorial representation of all the structures involved in the geometric mechanics of I order classical field theories see appendix, pag: \ref{frame:Gimmsy}.
-}
-%------------------------------------------------------------------------------------------------	
 
 
 %---------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1594,6 +1443,80 @@ manifold to any classical field system (e.g. a continuous medium like a filament
 	
 }
 %-------------------------------------------------------------------------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------------------------
+\begin{frame}[fragile]{MS geometry and classical field mechanics}\label{Frame:Ms-Field-Mechanics}
+		Consider a smooth manifold $Y$,
+		\begin{columns}
+			\hfill
+			\begin{column}{.5\linewidth}
+				\emph{Multicotangent bundle} $\bigwedge = \bigwedge^n T^\ast Y$\\
+				is naturally $n$-plectic
+			\end{column}
+			\begin{column}{.4\linewidth}
+				\[
+				\begin{tikzcd}
+					\Lambda \ar[d,"\pi"'] & T \Lambda \ar[d,"T \pi"] \ar[l] \\
+					Y								& T Y \ar[l]
+				\end{tikzcd}	
+				\]
+			\end{column}
+		\end{columns}
+	\pause
+	\begin{defblock}[Tautological $n$-form]
+		$\theta \in \Omega^n(\Lambda)$ such that:
+		\begin{displaymath}
+		\begin{split}
+			\left[ \iota_{u_1 \wedge \ldots \wedge u_n} \theta \right]_\eta 
+			&= \iota_{(T \pi)_\ast u_1 \wedge \ldots \wedge (T \pi)_\ast u_n} \eta \\
+			&= \iota_{u_1 \wedge \ldots \wedge u_n} \pi^\ast \eta 
+			\qquad \qquad \forall \eta \in \Lambda \, , \: \forall u_i \in T_\eta \Lambda 		
+		\end{split}
+		\end{displaymath}
+	\end{defblock}
+	\vfill
+	\begin{columns}
+		\begin{column}{.6\linewidth}
+			\begin{defblock}[Tautological (multisymplectic) (n+1)-form]
+				$$\omega := d \theta$$
+			\end{defblock}
+		\end{column}
+		\begin{column}{.4\linewidth}
+		 	\begin{claimblock}$\omega$ is not degenerate.\end{claimblock}	
+		\end{column}
+	\end{columns}	
+	\pause
+	\begin{keywordblock}
+		\begin{tabular}{|c|c|c|}
+			\hline 
+			point-particles mechanics & $\rightsquigarrow$ & classical fields mechanics \\
+			%(finite discrete DOF) & & (finite dimensional continuous DOF) \\
+			\hline 
+			symplectic & $\rightsquigarrow$ & multisymplectic \\ 
+			\hline 
+			Observables (Poisson) algebra & $\rightsquigarrow$ & Observables $L-\infty$ algebra
+			 \\ 
+			\hline 
+			Co-moment map & $\rightsquigarrow$ & Homotopy co-momentum map \\ 
+			\hline 
+		\end{tabular} 
+	\end{keywordblock}
+
+	
+\end{frame}
+\note[itemize]{
+	\item This example is significant from the perspective of geometric classical field theory:
+		\begin{displaymath}
+			\frac{\text{classical mechanics}}{\text{symplectic geo.}} =
+			\frac{\text{classical field mechanics}}{\text{multisymplectic geo.}}
+		\end{displaymath}
+	\item Multicotangent bundle is the \emph{Higher analogue} of the cotangent bundle.
+	(but it is not yet the analogue of a \emph{phase space}.)
+\item The multiphase space is the sub-bundle of $n$-forms vanishing when contracted with 2 vertical fields.
+  	\item The reason why this sub-bundle has a particular role is that it can be proved to be isomorphic to a suitable dual of the first Jet bundle.
+  	\item For further details see Gotay et al. \href{https://arxiv.org/abs/physics/9801019}{arXiv:physics/9801019}. For a pictorial representation of all the structures involved in the geometric mechanics of I order classical field theories see appendix, pag: \ref{frame:Gimmsy}.
+}
+%------------------------------------------------------------------------------------------------	
 
 
 %------------------------------------------------------------------------------------------------
