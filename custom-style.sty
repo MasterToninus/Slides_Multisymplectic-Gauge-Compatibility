@@ -55,6 +55,23 @@
 
 
 
+%- Math --------------------------------------------------------------------------------------------------------------
+
+\newcommand{\morphism}[5]{%
+  \begin{tikzcd}[
+    column sep=2em,
+    row sep=-.5ex,
+    ampersand replacement=\&
+  ]
+  #1\colon~ \&[-3em]
+  #2\vphantom{#3} \arrow[r] \&
+  #3\vphantom{#2} \\
+  \&
+  #4\vphantom{#5} \arrow[r,mapsto] \&
+  #5\vphantom{#4} 
+  \end{tikzcd}%
+}
+\newcommand{\Lag}{\mathcal{L}}
 
 %- WorkAround --------------------------------------------------------------------------------------------------------------
 %Standalone with relative path

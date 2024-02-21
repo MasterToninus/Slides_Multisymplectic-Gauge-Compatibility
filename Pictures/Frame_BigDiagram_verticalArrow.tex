@@ -1,5 +1,5 @@
 %+------------------------------------------------------------------------+
-%| Diagram with Overlays: Gauge square Diagram - symplectic case
+%| Diagram with Overlays: Vertical arrow
 %| Author: Antonio miti
 %+------------------------------------------------------------------------+
 
@@ -24,19 +24,12 @@
 
 \begin{document}
 	%
-	\begin{tikzcd}[column sep= large,row sep=small,
-		/tikz/execute at end picture={
-    		\node (large) [rectangle,dashed, draw, fit=(A1) (A2) (A3),label=below:{\scriptsize{\emph{Lie algebras cat.}}}] {};
-  		}]	
-%   execute at end picture={
-%     \node[label=below:{Symp.Mfds.},dashsquare=(tikz@f@1-1-1)(tikz@f@1-5-1)]{};
-%     \node[label=below:{Lie.Alg.oids},dashsquare=(tikz@f@1-1-5)(tikz@f@1-5-5)]{};
-%     \node[label=below:{Lie.Algs},dashsquare=(tikz@f@1-5-2)(tikz@f@1-2-4)]{};
-%		}
-				& |[visible on=<1->,alias=A1]|\big(C^\infty(M),\lbrace\cdot,\cdot\rbrace_\omega\big) 
+	\begin{tikzcd}[column sep= small,row sep=small,]	
+		& |[visible on=<1->,alias=A1]|\big(C^\infty(M),\lbrace\cdot,\cdot\rbrace_\omega\big) 
 		\ar[rr,visible on=<1->,"\Psi"]
-		\ar[dr,visible on=<3->,sloped,"\text{Preq}_\theta",xshift=.5em]	
-		\ar[dd,visible on=<3->,phantom,blue,"\circlearrowright"]
+		\ar[ddrr,visible on=<2->,phantom,blue,"\circlearrowright"]
+		\ar[dd,visible on=<1>,dashed, red,"???"']
+		\ar[dd,visible on=<2->,dashed, red,"\chi"]		
 		&
 		& |[visible on=<1->]|\big(\Gamma(TM\oplus \mathbb{R}),[\cdot,\cdot]_\omega\big)
 		\ar[dd,sloped,"\sim",visible on=<1->]
@@ -44,20 +37,12 @@
 %		 
 	\\
 %
-		|[visible on=<1->,alias=A2]|\mathfrak{g} \ar[ur,visible on=<1->]\ar[dr,visible on=<1->]& 
-		&
-		|[visible on=<3->]| Q(P,\theta) 
-		\ar[ur,visible on=<3->,hook] 
-		\ar[dr,visible on=<3->,hook]
-		\ar[r,visible on=<3->,phantom,blue,"\circlearrowright"]
-		& \phantom.
-		&
+		& & & &
 %
 	\\
 %
 		&|[visible on=<1->]|\big(C^\infty(M),\lbrace\cdot,\cdot\rbrace_{\tilde{\omega}}\big)
-		\ar[rr,visible on=<1->,"\Psi"]
-		\ar[ur,visible on=<3->,sloped,"\text{Preq}_{\theta-\pi^\ast B}"',xshift=.5em]		
+		\ar[rr,visible on=<1->,"\Psi"]	
 		& 
 		&
 		|[visible on=<1->,alias=A3]|\big(\Gamma(TM\oplus \mathbb{R}),[\cdot,\cdot]_{\tilde{\omega}}\big)

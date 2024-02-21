@@ -1,0 +1,44 @@
+%+------------------------------------------------------------------------+
+%| Diagram with Overlays: GIMMSY Construction for I order Field theories
+%| Author: Antonio miti
+%+------------------------------------------------------------------------+
+
+
+\documentclass[beamer,handout]{standalone}
+\usepackage{tikz-cd}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{cd, fit}
+\usepackage{MnSymbol}
+
+	%Credit: https://tex.stackexchange.com/questions/99119/beamer-problematic-use-of-visible-and-only-in-combination-with-tikz-to-draw-a
+  \tikzset{
+    invisible/.style={opacity=0},
+    visible on/.style={alt=#1{}{invisible}},
+    alt/.code args={<#1>#2#3}{%
+      \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
+    },
+  }
+
+\definecolor{grey}{rgb}{0.30, 0.30, 0.30}
+
+\begin{document}
+	%
+	\begin{tikzcd}[column sep= small,row sep=small,
+		]	
+		%
+		|[visible on=<2->,red]| J^1 E
+		\ar[dd,visible on=<2->,red,"\mathcal{Lag}"']
+		\ar[dr,visible on=<2->,red]
+		\ar[rr,visible on=<4->,"\mathbb{F}\mathcal{Lag}"]
+		&[1em] &[1em]
+		|[visible on=<4->]|(J^1 E )^{\ostar} \ar[d,hook, visible on=<4->]
+		\\[1em]
+		& |[visible on=<1->,blue]|\mathbf{E} \ar[d,blue]& |[visible on=<3->,orange]|\bigwedge^n T^\ast E \ar[l,visible on=<3->,orange]
+		\\
+		|[visible on=<2->,red]| \bigwedge^n T^\ast M\ar[r,visible on=<2->,red]  & |[visible on=<1->,blue]|\mathbf{M}^{(n)} &		
+ 	\end{tikzcd}	
+\end{document}
+
+	

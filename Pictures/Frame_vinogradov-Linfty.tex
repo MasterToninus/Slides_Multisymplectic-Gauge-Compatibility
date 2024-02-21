@@ -94,8 +94,8 @@
 % Now it's time to draw some edges between the global nodes. Note that we
 % have to apply the 'overlay' style.
 \begin{tikzpicture}[overlay]
-	\onslide<3->{\path[->,opacity=0.3] (n1) edge [bend right] (t1);}
-	\onslide<4->{\draw[->,opacity=0.3, rounded corners=6mm] (n2.north) -- ($(n2.north) + (0,5mm)$)  -- (t2.south west);}
+	\onslide<2->{\path[->,opacity=0.3] (n1) edge [bend right] (t1);}
+	\onslide<3->{\draw[->,opacity=0.3, rounded corners=6mm] (n2.north) -- ($(n2.north) + (0,5mm)$)  -- (t2.south west);}
        % \path[->] (n3) edge [out=0, in=-90] (t3);
 \end{tikzpicture}
 
