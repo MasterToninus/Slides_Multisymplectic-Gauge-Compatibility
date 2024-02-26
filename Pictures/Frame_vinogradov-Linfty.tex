@@ -3,7 +3,7 @@
 %| Author: Antonio miti
 %+------------------------------------------------------------------------+
 
-\documentclass[border=3pt,beamer]{standalone}
+\documentclass[border=3pt,beamer,handout,tikz]{standalone}
 \usepackage{tikz}
 \usepackage{verbatim}
 \usetikzlibrary{arrows,shapes}
@@ -11,6 +11,7 @@
 \usetikzlibrary{calc}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{amsfonts}
 
 \usepackage{stackengine}
 \providecommand{\pairing}{\langle\cdot,\cdot\rangle}
@@ -49,9 +50,9 @@
 		%
 		\tikz[na] \node[scale=0.5,coordinate,fill=blue!20,draw,circle] (n1) {};
 		\onslide<2->{graded vector space}
-		\onslide<2->{
-			\begin{displaymath}\label{eq:VSpace}
-			{(\mathcal{V}_n)^k} =
+		\onslide<2->{ $\mathcal{V}_n$
+			\begin{displaymath}
+				{(\mathcal{V}_n)}^k =
 			\begin{cases}
 				\mathfrak{X}(M)\oplus \Omega^{n-1}(M)  &\quad k=0,\\
 				\Omega^{n-1+k}(M) &\quad -n+1 \leq k < 0.

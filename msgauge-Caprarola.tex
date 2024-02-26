@@ -16,7 +16,7 @@
 
 
 %- D0cum3nt ----------------------------------------------------------------------------------------------
-\documentclass[10pt,handout]{beamer}
+\documentclass[10pt]{beamer}
 
 
 
@@ -28,7 +28,7 @@
 \usetikzlibrary{positioning, arrows}
 \usetikzlibrary{shapes}
 \usepackage{fontawesome}
-
+\usepackage{amsfonts}
 
 
 %--Beamer Style----------------------------------------------------------------------------------------
@@ -441,7 +441,7 @@ Multisymplectic observables and higher Courant algebroids
 			\end{align*}
 		\item<4-> I.e. $$\mathcal{L}_{\vHam_f} B = 0 ~ \forall f \in C^\infty(M) \qquad \qquad \text{\alert{contradiction!}}$$
 	\end{itemize}
-	\hfill \hyperlink{frame:pentagonMotivation}{\color{gray}$[<<]$}%\beamerskipbutton{}}
+	\hfill \onslide<4->{\hyperlink{frame:pentagonMotivation}{\color{gray}$[<<]$}}%\beamerskipbutton{}}
 \end{frame}
 %-------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -497,6 +497,7 @@ Multisymplectic observables and higher Courant algebroids
 			\end{column}
 		\end{columns}
 	\pause \pause \vfill
+	\pause
 	The Lie algebra map
 	\begin{displaymath}
 		\big(C^\infty(M),\{\cdot,\cdot\}_\omega\big) \xrightarrow{\Psi_\omega} 
@@ -542,7 +543,7 @@ Multisymplectic observables and higher Courant algebroids
 		\end{displaymath}
 	\end{enumerate}
 	
-	\hfill \hyperlink{frame:scopeTalk}{\color{gray}$[<<]$}%\beamerskipbutton{}}
+	\hfill \onslide<5->{\hyperlink{frame:scopeTalk}{\color{gray}$[<<]$}}%\beamerskipbutton{}}
 \end{frame}
 %-------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -732,7 +733,7 @@ Multisymplectic observables and higher Courant algebroids
 			\qquad \qquad \forall \eta \in \wedge^n T^* E \, , \: \forall u_i \in T_\eta (\wedge^n T^* E) 		
 		\end{displaymath}
 		}
-		\item<4-> The multisymplectic $(n+1)$-form is pulled back to $J^1 E$ through the \emph{Legendre transformation} $\mathbb{F}\Lag: J^1 E \to (J^1 E)^\ostar$
+		\item<4-> The multisymplectic $(n+1)$-form is pulled back to $J^1 E$ through the \emph{Legendre transformation} $\mathbb{F}\mathcal{L} J^1 E \to (J^1 E)^\circledast$
     given intrinsically by
     {\small
 		\begin{displaymath}
@@ -745,7 +746,7 @@ Multisymplectic observables and higher Courant algebroids
 	\end{itemize}
 	%
 	\vfill
-	\hfill \hyperlink{frame:hystMS}{\color{gray}$[<<]$}%\beamerskipbutton{}}
+	\hfill \onslide<4->{\hyperlink{frame:hystMS}{\color{gray}$[<<]$}}%\beamerskipbutton{}}
 \end{frame}
 %-------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -989,8 +990,8 @@ Multisymplectic observables and higher Courant algebroids
 	\end{defblock}
 	\vfill
 	\begin{itemize}
-		\item<6-> $(n=1) ~ \Rightarrow$ standard twisted \emph{Lie algebroid};
-		\item<7-> $(n=2) ~ \Rightarrow$ standard twisted \emph{Courant algebroid};
+		\item<6-> $(n=1) ~ \Rightarrow$ standard twisted {\small \color{UniGreen} (by a closed $2$-form)}  \emph{Lie algebroid};
+		\item<7-> $(n=2) ~ \Rightarrow$ standard twisted {\small \color{UniGreen} (by a closed $3$-form)} \emph{Courant algebroid};
 	\end{itemize}
 
 \end{frame}
@@ -998,7 +999,7 @@ Multisymplectic observables and higher Courant algebroids
 
 
 %-------------------------------------------------------------------------------------------------------------------------------------------------
-\begin{frame}[fragile]{Vinogradov $L_\infty$-algebra}
+\begin{frame}[fragile]{Vinogradov $L_\infty$-algebra}\label{frame:VinoLinfty}
 	Vin. alg.oids 
 	$\quad\simeq\quad$ 	
 	$NQ$-manifolds {\small($L_\infty$-algebroids)}
@@ -1022,6 +1023,7 @@ Multisymplectic observables and higher Courant algebroids
             	 }}};
 		}			
 	}
+	\hfill \onslide<6->{\hyperlink{frame:VinoDetails}{\color{gray}$[>>]$}}%\beamerskipbutton{}}
 
 \end{frame}
 %-------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1030,8 +1032,31 @@ Multisymplectic observables and higher Courant algebroids
 
 
 %-------------------------------------------------------------------------------------------------------------------------------------------------
-\begin{frame}[fragile]{TODO}
-	Details sulla ricetta di Zambon per costruire questa Lie infinito algebra.
+\begin{frame}[t,fragile,shrink=20]{Details on the Vinogradov $L_\infty$-algebra Construction}\label{frame:VinoDetails}
+	%
+	\begin{enumerate}[<+-| alert@+>]
+		\setlength\itemsep{2em}
+		\item Consider the \emph{Graded manifold}
+		 $$ Q = T^\ast[n] T[1] M $$
+		 call $\mathcal{C}$ the corresponding algebra of functions.
+		\item $Q$ is a (shifted) contangent, hence it's naturally Poisson
+		 $$ (\mathcal{C},\cdot,\{\cdot,\cdot\}) \qquad \text{is a Poisson $n$-algebra}~;.$$
+		\item consider coordinates on $Q\sim (x^i,v_i, P_i, p_i)$ with
+			$$ |x^i|=0,~ |v^i|=1,~ |P_i|=n, ~ |p_i|=n-1 ~;$$
+		\item The degree $n+1$ function $\mathcal{S}= \sum_i v_i P_i$ encoding the de Rham differential satisfies
+			$\{\mathcal{S},\mathcal{S}\}=0$. Hence
+			 $$ (\mathcal{C}[n],\delta=\{\mathcal{S},\cdot\},\{\cdot,\cdot\}) \qquad \text{is a DGLA}~;$$
+		\item Apply Getzler \cite{Getzler1991} and Fiorenza-Manetti \cite{Fiorenza2006}  \emph{Cone costruction} to the DGLA, one gets a $L_\infty$ algebra on the non-negative truncation of $\mathcal{C}[n]$ given by
+		\begin{displaymath}
+			\begin{tikzcd}[column sep= small,row sep=small]
+				0 \ar[r,] & C^\infty(M) \ar["d",r] &
+				\Omega^1(M) \ar["d",r] & \cdots \ar[r]
+				& \Omega^{n-2}(M) \ar[r]& \Omega^{n-1}(M)\oplus \mathfrak{X}(M) \ar[r] & 0
+			\end{tikzcd}
+		\end{displaymath}			 
+			via derived brackets.	
+	\end{enumerate}
+	\hfill \onslide<5->{\hyperlink{frame:VinoLinfty}{\color{gray}$[<<]$}}%\beamerskipbutton{}}
 \end{frame}
 %-------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1379,20 +1404,33 @@ The pentagon commutes.
 	\end{tcolorbox}	
 	
 	}
-	
+	\hfill \onslide<4->{\hyperlink{frame:thankyouslide}{\color{gray}$[\beamerskipbutton{}]$} }
 
 \end{frame}
 %-------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+%##################################################################################
+\begin{frame}
+	\begin{center}
+	\Huge\emph{Outlook}
+	\end{center}
+\end{frame}
+\addtocounter{framenumber}{-1}
+%##################################################################################
+
 %-------------------------------------------------------------------------------------------------------------------------------------------------
-\begin{frame}[fragile]{TODO}
+\begin{frame}[fragile]{A bigger picture about Multisymplectic observables}
 	OUTLOOK. La big picture. 
 \end{frame}
 %-------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
+
+
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------
 	\begin{frame}{}
 	\label{frame:thankyouslide}
 		\vfill
@@ -1404,7 +1442,7 @@ The pentagon commutes.
 		\centering
 		\fbox{\includegraphics[width=.4\textwidth]{Pictures/arxiv-cover}}
 	\end{frame}
-
+%-------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -1415,12 +1453,21 @@ The pentagon commutes.
 % APPENDIX
 %------------------------------------------------------------------------------------------------
 \appendix
-
+\renewcommand{\insertframenumber}{\Alph{framenumber}}
 
 
 %-------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Appendix}
 %------------------------------------------------------------------------------------------------
+%##################################################################################
+\begin{frame}
+	\begin{center}
+	\Huge\emph{Supplementary Material}
+	\end{center}
+\end{frame}
+\addtocounter{framenumber}{-1}
+%##################################################################################
+
 
 %-------------------------------------------------------------------------------------------------------------------------------------------------
 \begin{frame}[fragile]{Homotopy comomentum maps}

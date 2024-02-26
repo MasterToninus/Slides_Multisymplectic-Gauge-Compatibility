@@ -10,7 +10,7 @@
 \usepackage{amsfonts}
 \usetikzlibrary{decorations.pathmorphing}
 \usetikzlibrary{cd, fit}
-\usepackage{MnSymbol}
+
 
 	%Credit: https://tex.stackexchange.com/questions/99119/beamer-problematic-use-of-visible-and-only-in-combination-with-tikz-to-draw-a
   \tikzset{
@@ -29,11 +29,11 @@
 		]	
 		%
 		|[visible on=<2->,red]| J^1 E
-		\ar[dd,visible on=<2->,red,"\mathcal{Lag}"']
+		\ar[dd,visible on=<2->,red,"\mathcal{L}"']
 		\ar[dr,visible on=<2->,red]
-		\ar[rr,visible on=<4->,"\mathbb{F}\mathcal{Lag}"]
+		\ar[rr,visible on=<4->,"\mathbb{F}\mathcal{L}"]
 		&[1em] &[1em]
-		|[visible on=<4->]|(J^1 E )^{\ostar} \ar[d,hook, visible on=<4->]
+		|[visible on=<4->]|(J^1 E )^{\circledast} \ar[d,hook, visible on=<4->]
 		\\[1em]
 		& |[visible on=<1->,blue]|\mathbf{E} \ar[d,blue]& |[visible on=<3->,orange]|\bigwedge^n T^\ast E \ar[l,visible on=<3->,orange]
 		\\
