@@ -183,40 +183,7 @@ Multisymplectic observables and higher Courant algebroids
 %-------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-%%-------------------------------------------------------------------------------------------------------------------------------------------------
-%\begin{frame}[fragile]{A \emph{pentagonal} diagram in symplectic geometry}
-%	Given a \alert{symplectic mfd.} $(M,\omega)$ ...
-%	\vfill
-%	\begin{center}
-%		\includestandalone[width=.95\textwidth]{Pictures/Frame_Embedding_Diagram_symplectic}
-%	\end{center}
-%	\vspace{3em}
-%	\vfill
-%	\begin{minipage}[t][8.5em][t]{\textwidth}
-%		\begin{itemize}
-%			\item<1-> \alert<1>{... there is a naturally associated Poisson algebra ...}
-%			\item<2-> \alert<2>{... and also a (standard twisted) Lie Algebroid}.
-%			\item<3-> A Lie algebroid is a "controlled" \alert<3>{$\infty$-dimensional Lie algebra.}
-%			\item[]<4->
-%				\quad\\
-%		\vspace{-.75em}
-%		\tcbset{colback=white,
-%		colbacktitle=white,
-%		colframe=red!70!black,
-%		boxrule=1pt,
-%		colupper=red!70!black,
-%		arc=15pt,
-%		}
-%		\begin{tcolorbox}[enhanced,frame hidden,borderline={0.5pt}{0pt}{blue}]
-%			\color{blue}{
-%			\textbf{Lemma}: There exists an embedding of Lie Algebras.
-%			}
-%		\end{tcolorbox}
-%		\end{itemize}
-%	\end{minipage}
-%\end{frame}
-%%-------------------------------------------------------------------------------------------------------------------------------------------------
-
+ 
 %-------------------------------------------------------------------------------------------------------------------------------------------------
 \begin{frame}[fragile]{A \emph{pentagonal} diagram in symplectic geometry}
 	Given a \alert{symplectic mfd.} $(M,\omega)$ ...
@@ -332,118 +299,7 @@ Multisymplectic observables and higher Courant algebroids
 %-------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-%%-------------------------------------------------------------------------------------------------------------------------------------------------
-%\begin{frame}[fragile]{Compatibility between gauge transformations and comoment maps}
-%	%
-%	Consider $(M,\omega)$ \alert{symplectic mfd.}
-%	%
-%	\begin{center}
-%			\includestandalone[width=.8\textwidth]{Pictures/Frame_BigDiagram_symplectic}
-%	\end{center}
-%	%
-%	\vspace{-1em}
-%	\vfill
-%	\begin{minipage}[t][8em][t]{\textwidth}
-%		\begin{itemize}
-%			\only<2>{
-%				\item<2-> Consider a second gauge-related symplectic structure on $M$
-%					\begin{displaymath}
-%						\tilde{\omega} = \omega + d B \qquad \text{with} \quad B\in \Omega^1(M).
-%					\end{displaymath}
-%			}
-%			\only<3-4>{
-%				\item<3-> There is a natural isomorphism in the Lie Alg.oids category \emph{($B$-transformation)}
-%					\begin{displaymath}
-%						\binom{x}{f} \mapsto \binom{x}{f-\iota_x B} ~.
-%					\end{displaymath}
-%			}
-%			\only<6-7>{
-%				\item<6-> Consider an infinitesimal group action $\mathfrak{g}\circlearrowleft M$ which is Hamiltonian w.r.t. both $\omega$ and $\tilde{\omega}$.
-%				\item<7-> let be $f:\mathfrak{g} \to C^\infty(M)_\omega$ and $\tilde{f}:\mathfrak{g} \to C^\infty(M)_{\tilde{\omega}}$ two comoment map s.t.
-%				\begin{displaymath}
-%					\tilde{f}(\xi) = f(\xi) - \iota_{\underline{\xi}}B
-%				\end{displaymath}
-%				}
-%			\item[]						
-%		\end{itemize}
-%	\only<5>{
-%		\vspace{-.75em}
-%		\begin{center}
-%		\tcbox[enhanced,frame hidden,borderline={0.5pt}{0pt}{red,dashed}]{	
-%			\alert{
-%			\faQuestionCircle \qquad
-%				{How can we close the left-hand side?}
-%			\qquad \faQuestionCircle		
-%			}
-%		}
-%		\end{center}
-%	}
-%	\only<8->{
-%		\vspace{-.75em}
-%		\tcbset{colback=white,
-%		colbacktitle=white,
-%		colframe=red!70!black,
-%		boxrule=1pt,
-%		colupper=red!70!black,
-%		arc=15pt,
-%		}
-%		\begin{tcolorbox}[enhanced,frame hidden,borderline={0.5pt}{0pt}{blue}]
-%			\color{blue}{
-%			Lemma: The central pentagon commutes!
-%			}
-%		\end{tcolorbox}
-%	\vfill
-%	}
-%	\only<9->{
-%		\vspace{-.75em}
-%		\begin{center}
-%		\tcbox[enhanced,frame hidden,borderline={0.5pt}{0pt}{red,dashed}]{	
-%			\alert{
-%			\faQuestionCircle \qquad
-%				{What happens in the higher (n-plectic) case?}
-%			\qquad \faQuestionCircle		
-%			}
-%		}
-%		\end{center}
-%	}
-%	\end{minipage}	
-%\end{frame}
-%\note[itemize]{
-%	\item The horizontal embedding is  $f \mapsto (v_f,f)$;
-%	\item Vertical maps are also known as \emph{Gauge transformations}
-%	\item upshot: 
-%	\begin{enumerate}
-%		\item 
-%	\end{enumerate}
-%}
-%%-------------------------------------------------------------------------------------------------------------------------------------------------
-
-%-------------------------------------------------------------------------------------------------------------------------------------------------
-\begin{frame}[fragile]{Why not a direct vertical arrow?}\label{frame:whyNoVertArrow}
-	\begin{center}
-			\includestandalone[width=.7\textwidth]{Pictures/Frame_BigDiagram_verticalArrow}
-	\end{center}
-	\vfill
-	\begin{itemize}
-		\item<2-> Assume exists \alert<2>{$\chi:C^\infty(M)_\omega \to C^\infty(M)_{\widetilde{\omega}}$} ~s.t. the square commutes.
-				\begin{displaymath}
-					\begin{cases}
-						\chi(f) =& f - \iota_{\vHam_f} B
-						\\
-						\widetilde{\vHam}_{\chi(f)} =& \vHam_f
-					\end{cases}
-				\end{displaymath}
-		\item<3-> Then
-			\begin{align*}
-				d \chi(f) &= - \iota_{\vHam_f}\omega - d \iota_{\vHam_f} B \\
-				\parallel & \\
-				-\iota_{\widetilde{\vHam}_{\chi(f)}} \widetilde{\omega} &= -\iota_{\vHam_f} \omega + \iota_{\vHam_f} d B
-			\end{align*}
-		\item<4-> I.e. $$\mathcal{L}_{\vHam_f} B = 0 ~ \forall f \in C^\infty(M) \qquad \qquad \text{\alert{contradiction!}}$$
-	\end{itemize}
-	\hfill \onslide<4->{\hyperlink{frame:pentagonMotivation}{\color{gray}$[<<]$}}%\beamerskipbutton{}}
-\end{frame}
-%-------------------------------------------------------------------------------------------------------------------------------------------------
+ 
 
 %-------------------------------------------------------------------------------------------------------------------------------------------------
 \begin{frame}[fragile]{A \emph{pentagonal} diagram in symplectic geometry}\label{frame:pentagonMotivation}
@@ -477,75 +333,6 @@ Multisymplectic observables and higher Courant algebroids
 \end{frame}
 %-------------------------------------------------------------------------------------------------------------------------------------------------
 
-%-------------------------------------------------------------------------------------------------------------------------------------------------
-\begin{frame}[fragile]{Pentagonal diagram in the \emph{prequantizable} case}\label{frame:pentagonPrequantum}
-	Assume $\omega$ is \alert{prequantizable}:
-	\pause
-	%
-		\begin{columns}
-			\begin{column}{.6\linewidth}
-				\begin{itemize}
-					\item<2-> $\pi:P\to M$ \small associated $S^1$ bundle;
-					\item<3-> $E\in \mathfrak{X}(P)$ \small fundamental v.f. of $S^1\curvearrowright P$;
-					\item<4-> $\theta\in \Omega^1(P)^{S^1}$ \small connection $1$-form  s.t. $d \theta = \pi^\ast \omega$.
-				\end{itemize}
-			\end{column}
-			\begin{column}{.4\linewidth}
-				\begin{center}
-					\includestandalone[width=1\textwidth]{Pictures/Frame_prequantum}
-				\end{center}	
-			\end{column}
-		\end{columns}
-	\pause \pause \vfill
-	\pause
-	The Lie algebra map
-	\begin{displaymath}
-		\big(C^\infty(M),\{\cdot,\cdot\}_\omega\big) \xrightarrow{\Psi_\omega} 
-		\big(\Gamma(TM\oplus\mathbb{R}),[\cdot,\cdot]_\omega\big)
-	\end{displaymath}
-	%
-	\vfill
-	factors through the Lie algebra of \emph{\alert{infinitesimal quanto-morphisms}}
-	%
-	\pause
-	\begin{displaymath}
-		Q(P,\theta)= \left \lbrace 
-			Y \in \mathfrak{X}(P) 
-			~ \Big\vert ~
-			\mathcal{L}_Y \theta = 0
-			\right \rbrace~.
-	\end{displaymath}		
-	
-	
-	\hfill \hyperlink{frame:scopeTalk}{\color{gray}$[<<]$}%\beamerskipbutton{}}
-\end{frame}
-%-------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-%-------------------------------------------------------------------------------------------------------------------------------------------------
-\begin{frame}[fragile]{Pentagonal diagram in the \emph{prequantizable} case \hfill (cont.)}
-	\begin{center}
-			\includestandalone[width=.8\textwidth]{Pictures/Frame_prequantumDiagram}
-	\end{center}	
-	\vfill
-	\begin{enumerate}
-		\item<2-> Start from the prequantization map (isomorphism)
-					$$\textrm{Preq}_\theta: f \mapsto \vHam_f^{Hor \theta} + (\pi^\ast f ) E $$
-					\hfill {\tiny ( where $Hor \theta$ is the horizontal lift);}
-		\item<3-> Observe that $Q(P,\theta) \subset \mathfrak{X}^{S^1}$;
-		\item<4-> By definition, $\mathfrak{X}^{S^1}= \Gamma(\textrm{at}(P))$ where $\textrm{at}(P)$ is the Atiyah Lie algebroid associated to the principal bundle $P\to M$.
-		\item<5-> $\textrm{at}(P)$ is defined by the s.e.s. $0\to \mathbb{R} \to \textrm{at}(P) \to TM \to 0$,
-		\\ $\theta$ provides a splitting, i.e. an isomorphism
-		\begin{displaymath}
-			\morphism{\sigma_\theta}{TM\oplus \mathbb{R}}{\textrm{at}(P)}
-			{\binom{v}{c}}{v^{Hor \theta} + c \cdot E}~.
-		\end{displaymath}
-	\end{enumerate}
-	
-	\hfill \onslide<5->{\hyperlink{frame:scopeTalk}{\color{gray}$[<<]$}}%\beamerskipbutton{}}
-\end{frame}
-%-------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -713,42 +500,6 @@ Multisymplectic observables and higher Courant algebroids
 
 
 
-%-------------------------------------------------------------------------------------------------------------------------------------------------
-\begin{frame}[fragile]{A multisymplectic manifold in Lagrangian Field Theory}\label{frame:GIMMSY_construction}
-	\begin{center}
-		\includestandalone[width=.5\textwidth]{Pictures/Frame_GIMMSY}
-	\end{center}	
-	\vfill
-	
-	Consider a \emph{\bf{first-order Lagrangian Field Theory}}:
-	\begin{itemize}
-		\item<1-> {\color{blue} Kinematics} is encoded by a {\color{blue} \emph{configuration bundle}};
-		\item<2-> {\color{red} Dynamics} is encoded by a {\color{red} \emph{Lagrangian density}};
-		\item<3-> The {\color{orange} multicontangent bundle} is naturally $n$-plectic with $\omega := d \theta$ and \\
-		$\theta \in \Omega^n(\Lambda)$ the tautological $n$-form
-		{\small
-		\begin{displaymath}
-			\left[ \iota_{u_1 \wedge \ldots \wedge u_n} \theta \right]_\eta 
-			= \iota_{u_1 \wedge \ldots \wedge u_n} \pi^\ast \eta 
-			\qquad \qquad \forall \eta \in \wedge^n T^* E \, , \: \forall u_i \in T_\eta (\wedge^n T^* E) 		
-		\end{displaymath}
-		}
-		\item<4-> The multisymplectic $(n+1)$-form is pulled back to $J^1 E$ through the \emph{Legendre transformation} $\mathbb{F}\mathcal{L} J^1 E \to (J^1 E)^\circledast$
-    given intrinsically by
-    {\small
-		\begin{displaymath}
-        		\Big\langle \mathbb{F}\mathcal{L}(\gamma),\gamma'\Big\rangle=
-        		\mathcal{L}\Big(\gamma\Big) + \frac{ d}{ d \epsilon}\mathcal{L}\Big(\gamma +\epsilon(\gamma'-\gamma)\Big)\Bigg\vert_{\epsilon=0} \qquad \forall \gamma,\gamma' \in J^1 E
-    		\end{displaymath}
-    }
-
-    %
-	\end{itemize}
-	%
-	\vfill
-	\hfill \onslide<4->{\hyperlink{frame:hystMS}{\color{gray}$[<<]$}}%\beamerskipbutton{}}
-\end{frame}
-%-------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 %-------------------------------------------------------------------------------------------------------------------------------------------------
@@ -946,36 +697,6 @@ Multisymplectic observables and higher Courant algebroids
 %-------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-%-------------------------------------------------------------------------------------------------------------------------------------------------
-\begin{frame}[fragile,shrink]{Multisymplectic Observables - a controversial notion}
-	\begin{block}{ Much debate about the "correct" mathematical of \emph{multisymplectic observables}}
-		\begin{itemize}
-			\item A crucial step for quantization schemes.
-			\item Obstructed adoption of this formalism in mechanics.
-		\end{itemize}	
-	\end{block}		
-	%
-	\vspace{1.5em} \pause
-	\begin{block}{ At least a second competing notion of \emph{multisymplectic observables algebra}}
-		\begin{displaymath}
-			Leib(M,\omega) = \Big( \Omega_{ham}^{n-1}(M,\omega), \llbracket\cdot,\cdot\rrbracket \Big)
-		\end{displaymath}
-		with the binary bracket 
-		\begin{center}
-			\includestandalone{Pictures/Equation_Leibbracket}	
-		\end{center}
-	\end{block}	
-	\vspace{1em} \pause
-	\begin{block}{Open Questions:}
-		\begin{itemize}
-			\item How are the two concepts related?
-			\item Do they give what is physically expected to be called an \emph{measurable quantity}?
-				\\
-				(Folklore conjecture: No, they only give \emph{local observables})				
-		\end{itemize}
-	\end{block}
-\end{frame}
-%-------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 %-------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1030,35 +751,6 @@ Multisymplectic observables and higher Courant algebroids
 
 
 
-
-%-------------------------------------------------------------------------------------------------------------------------------------------------
-\begin{frame}[t,fragile,shrink=20]{Details on the Vinogradov $L_\infty$-algebra Construction}\label{frame:VinoDetails}
-	%
-	\begin{enumerate}[<+-| alert@+>]
-		\setlength\itemsep{2em}
-		\item Consider the \emph{Graded manifold}
-		 $$ Q = T^\ast[n] T[1] M $$
-		 call $\mathcal{C}$ the corresponding algebra of functions.
-		\item $Q$ is a (shifted) contangent, hence it's naturally Poisson
-		 $$ (\mathcal{C},\cdot,\{\cdot,\cdot\}) \qquad \text{is a Poisson $n$-algebra}~;.$$
-		\item consider coordinates on $Q\sim (x^i,v_i, P_i, p_i)$ with
-			$$ |x^i|=0,~ |v^i|=1,~ |P_i|=n, ~ |p_i|=n-1 ~;$$
-		\item The degree $n+1$ function $\mathcal{S}= \sum_i v_i P_i$ encoding the de Rham differential satisfies
-			$\{\mathcal{S},\mathcal{S}\}=0$. Hence
-			 $$ (\mathcal{C}[n],\delta=\{\mathcal{S},\cdot\},\{\cdot,\cdot\}) \qquad \text{is a DGLA}~;$$
-		\item Apply Getzler \cite{Getzler1991} and Fiorenza-Manetti \cite{Fiorenza2006}  \emph{Cone costruction} to the DGLA, one gets a $L_\infty$ algebra on the non-negative truncation of $\mathcal{C}[n]$ given by
-		\begin{displaymath}
-			\begin{tikzcd}[column sep= small,row sep=small]
-				0 \ar[r,] & C^\infty(M) \ar["d",r] &
-				\Omega^1(M) \ar["d",r] & \cdots \ar[r]
-				& \Omega^{n-2}(M) \ar[r]& \Omega^{n-1}(M)\oplus \mathfrak{X}(M) \ar[r] & 0
-			\end{tikzcd}
-		\end{displaymath}			 
-			via derived brackets.	
-	\end{enumerate}
-	\hfill \onslide<5->{\hyperlink{frame:VinoLinfty}{\color{gray}$[<<]$}}%\beamerskipbutton{}}
-\end{frame}
-%-------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -1411,6 +1103,7 @@ The pentagon commutes.
 
 
 %##################################################################################
+\section*{Outlook}
 \begin{frame}
 	\begin{center}
 	\Huge\emph{Outlook}
@@ -1420,11 +1113,64 @@ The pentagon commutes.
 %##################################################################################
 
 %-------------------------------------------------------------------------------------------------------------------------------------------------
-\begin{frame}[fragile]{A bigger picture about Multisymplectic observables}
-	OUTLOOK. La big picture. 
+\begin{frame}[fragile,shrink]{Multisymplectic Observables - a controversial notion}
+	\begin{block}{ Much debate about the "correct" mathematical of \emph{multisymplectic observables}}
+		\begin{itemize}
+			\item A crucial step for quantization schemes.
+			\item Obstructed adoption of this formalism in mechanics.
+		\end{itemize}	
+	\end{block}		
+	%
+	\vspace{1.5em} \pause
+	\begin{block}{ At least a second competing notion of \emph{multisymplectic observables algebra}}
+		\begin{displaymath}
+			Leib(M,\omega) = \Big( \Omega_{ham}^{n-1}(M,\omega), \llbracket\cdot,\cdot\rrbracket \Big)
+		\end{displaymath}
+		with the binary bracket 
+		\begin{center}
+			\includestandalone{Pictures/Equation_Leibbracket}	
+		\end{center}
+	\end{block}	
+	\vspace{1em} \pause
+	\begin{block}{Open Questions:}
+		\begin{itemize}
+			\item How are the two concepts related?
+			\item Do they give what is physically expected to be called an \emph{measurable quantity}?
+				\\
+				(Folklore conjecture: No, they only give \emph{local observables})				
+		\end{itemize}
+	\end{block}
 \end{frame}
 %-------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{frame}[fragile]{A bigger picture about Multisymplectic observables}
+	%
+	\begin{center}
+		\includestandalone[width=.95\textwidth]{Pictures/Frame_OutlookDiagram}
+	\end{center}		
+	
+\end{frame}
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{frame}[fragile]{Pentagonal Diagram and higher Prequantization}
+	%
+	\begin{center}
+		\includestandalone[width=.8\textwidth]{Pictures/Frame_OutlookPrequantum}
+	\end{center}		
+	\onslide<3->{
+		\small
+		\begin{block}{Partial Results in the $2$-plectic case}
+			\begin{itemize}
+				\item G. Sevestre \& T. Wurzbacher, "On the Prequantisation Map for 2-Plectic Manifolds",  \cite{Sevestre2021};
+				\item D. Djounvouna \& D. Krepski, "Infinitesimal symmetries of bundle gerbes and Courant algebroids"\cite{Djounvouna2023}.
+			\end{itemize}
+		\end{block}
+	}
+\end{frame}
+%-------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -1468,90 +1214,104 @@ The pentagon commutes.
 \addtocounter{framenumber}{-1}
 %##################################################################################
 
-
 %-------------------------------------------------------------------------------------------------------------------------------------------------
-\begin{frame}[fragile]{Homotopy comomentum maps}
-	Consider a Lie algebra action $v:\mathfrak{g} \to \mathfrak{X}(M)$  \underline{preserving the $n$-plectic form $\omega$}.
+\begin{frame}[fragile]{Why not a direct vertical arrow?}\label{frame:whyNoVertArrow}
+	\begin{center}
+			\includestandalone[width=.7\textwidth]{Pictures/Frame_BigDiagram_verticalArrow}
+	\end{center}
 	\vfill
-	\begin{defblock}[Homotopy comomentum map \emph{(Callies, Fregier, Rogers, Zambon)} \cite{Callies2016}]
-			\includestandalone{Pictures/Frame_Lifting}
-	\end{defblock}
-	\onslide<4->{
-	\begin{lemblock}[HCMM unfolded  \cite{Callies2016}]
-			%
-			HCMM is a sequence of (graded-skew) multilinear maps:
-			\begin{displaymath}
-				(f)  = \big\lbrace f_k: \; \Lambda^k{\mathfrak g} \to L^{1-k} \subseteq \Omega^{n-k}(M) 
-				~\big\vert~ 0\leq k \leq n+1  \big\rbrace
-			\end{displaymath}
-			\emph{fulfilling:}%\emph{such that:}
-			\begin{itemize}
-				\item<5-> $f_0 = 0 $, $f_{n+1} = 0$
-				\item<6-> $d f_k (p) = f_{k-1} (
-				\tikz[baseline,remember picture]{\node[rounded corners,
-                        fill=green!5,draw=green!30,anchor=base]            
-            			(target) {$\partial $ };
-            	}				
-				p)  - (-1)^{\frac{k(k+1)}{2}} \iota(v_p) \omega 
-				\qquad\scriptstyle \forall p \in \Lambda^k(\mathfrak{g}),\; \forall k=1,\dots n+1$
-			\end{itemize}
-		\onslide<7->{
-			\tikz[overlay,remember picture]
-			{
-				\node[rounded corners,
-	                 draw=green!30,anchor=base]            
-	            	 (base) at ($(current page.east)-(3,3)$) [rotate=-0,align=center] {\footnotesize{\hyperlink{frame:CE-complex}{\emph{Chevalley-Eilenberg boundary op.}}}};
-			}	
-		\begin{tikzpicture}[overlay,remember picture]
-	    	\path[->] (base.west) edge[bend right,green](target.north east);
-	    \end{tikzpicture}
-	    }
-	\end{lemblock}	
-	}
-	\vfill
+	\begin{itemize}
+		\item<2-> Assume exists \alert<2>{$\chi:C^\infty(M)_\omega \to C^\infty(M)_{\widetilde{\omega}}$} ~s.t. the square commutes.
+				\begin{displaymath}
+					\begin{cases}
+						\chi(f) =& f - \iota_{\vHam_f} B
+						\\
+						\widetilde{\vHam}_{\chi(f)} =& \vHam_f
+					\end{cases}
+				\end{displaymath}
+		\item<3-> Then
+			\begin{align*}
+				d \chi(f) &= - \iota_{\vHam_f}\omega - d \iota_{\vHam_f} B \\
+				\parallel & \\
+				-\iota_{\widetilde{\vHam}_{\chi(f)}} \widetilde{\omega} &= -\iota_{\vHam_f} \omega + \iota_{\vHam_f} d B
+			\end{align*}
+		\item<4-> I.e. $$\mathcal{L}_{\vHam_f} B = 0 ~ \forall f \in C^\infty(M) \qquad \qquad \text{\alert{contradiction!}}$$
+	\end{itemize}
+	\hfill \onslide<4->{\hyperlink{frame:pentagonMotivation}{\color{gray}$[<<]$}}%\beamerskipbutton{}}
 \end{frame}
 %-------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
-
-%---------------------------------------------------------------------------------------------------------------------------------------------------
-\subsection{Leibniz-algebra of Observables}
-\begin{frame}[fragile,t]{Leibniz-algebra of Observables}
-
-	\begin{defblock}[Leibniz algebra of observables]
-		\hspace{.25em} $Leib(M,\omega)$ is given by:
-		\begin{itemize}
-			\item[•] the vector space $$\Omega_{ham}^{n-1}(M,\omega)$$
-			\item[•] with the binary bracket 
-			\begin{center}
-				\includestandalone{Pictures/Equation_Leibbracket}	
-			\end{center}
-		\end{itemize}	
-	\end{defblock}
-	\vfill
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{frame}[fragile]{Pentagonal diagram in the \emph{prequantizable} case}\label{frame:pentagonPrequantum}
+	Assume $\omega$ is \alert{prequantizable}:
 	\pause
 	%
-	\begin{propblock}
-		\begin{itemize}
-			\setlength\itemsep{1em}
-			\item[i.] $\vHam_{\llbracket \alpha, \beta \rrbracket} = [\vHam_\alpha,\vHam_\beta]$
-			\item[ii.] $\llbracket \sigma, \llbracket \alpha, \beta \rrbracket \rrbracket =
-			\llbracket\llbracket \sigma, \alpha \rrbracket, \beta \rrbracket
-			+
-			\llbracket \alpha, \llbracket \sigma, \beta \rrbracket \rrbracket$
-			\item[iii.] $\llbracket \alpha, \beta \rrbracket + \llbracket \beta,\alpha \rrbracket = d \left( \iota_{\vHam_\alpha} \beta + \iota_{\vHam_\beta} \alpha\right)$
-		\end{itemize}
-	\end{propblock}
-
+		\begin{columns}
+			\begin{column}{.6\linewidth}
+				\begin{itemize}
+					\item<2-> $\pi:P\to M$ \small associated $S^1$ bundle;
+					\item<3-> $E\in \mathfrak{X}(P)$ \small fundamental v.f. of $S^1\curvearrowright P$;
+					\item<4-> $\theta\in \Omega^1(P)^{S^1}$ \small connection $1$-form  s.t. $d \theta = \pi^\ast \omega$.
+				\end{itemize}
+			\end{column}
+			\begin{column}{.4\linewidth}
+				\begin{center}
+					\includestandalone[width=1\textwidth]{Pictures/Frame_prequantum}
+				\end{center}	
+			\end{column}
+		\end{columns}
+	\pause \pause \vfill
+	\pause
+	The Lie algebra map
+	\begin{displaymath}
+		\big(C^\infty(M),\{\cdot,\cdot\}_\omega\big) \xrightarrow{\Psi_\omega} 
+		\big(\Gamma(TM\oplus\mathbb{R}),[\cdot,\cdot]_\omega\big)
+	\end{displaymath}
+	%
+	\vfill
+	factors through the Lie algebra of \emph{\alert{infinitesimal quanto-morphisms}}
+	%
+	\pause
+	\begin{displaymath}
+		Q(P,\theta)= \left \lbrace 
+			Y \in \mathfrak{X}(P) 
+			~ \Big\vert ~
+			\mathcal{L}_Y \theta = 0
+			\right \rbrace~.
+	\end{displaymath}		
+	
+	
+	\hfill \hyperlink{frame:scopeTalk}{\color{gray}$[<<]$}%\beamerskipbutton{}}
 \end{frame}
-\note[itemize]{
-	\item in addition to being extendable to an $L_\infty$-algebra, the space $\Omega^{n-1}_{ham}(M)$ also carries the structure of a Leibniz algebra. This structure is very important for multisymplectic reduction procedures.
-	\item 
-	\item Take away: Two brackets on $\Omega_H^{k-1}(M)$, ${\color{red}\llbracket\alpha,\beta\rrbracket = \mathcal{L}_{X_\alpha} \beta}$ and ${\color{green}\{\alpha,\beta\}=\iota_{X_\alpha}\d\beta}$,
-	Equal up to a coboundary: ${\color{red}\mathcal{L}_{X_\alpha}\beta} = {\color{green}\iota_{X_\alpha}\d\beta} + \d\hspace{1pt}\iota_{X_\alpha}\beta$
-}
-%---------------------------------------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{frame}[fragile]{Pentagonal diagram in the \emph{prequantizable} case \hfill (cont.)}
+	\begin{center}
+			\includestandalone[width=.8\textwidth]{Pictures/Frame_prequantumDiagram}
+	\end{center}	
+	\vfill
+	\begin{enumerate}
+		\item<2-> Start from the prequantization map (isomorphism)
+					$$\textrm{Preq}_\theta: f \mapsto \vHam_f^{Hor \theta} + (\pi^\ast f ) E $$
+					\hfill {\tiny ( where $Hor \theta$ is the horizontal lift);}
+		\item<3-> Observe that $Q(P,\theta) \subset \mathfrak{X}^{S^1}$;
+		\item<4-> By definition, $\mathfrak{X}^{S^1}= \Gamma(\textrm{at}(P))$ where $\textrm{at}(P)$ is the Atiyah Lie algebroid associated to the principal bundle $P\to M$.
+		\item<5-> $\textrm{at}(P)$ is defined by the s.e.s. $0\to \mathbb{R} \to \textrm{at}(P) \to TM \to 0$,
+		\\ $\theta$ provides a splitting, i.e. an isomorphism
+		\begin{displaymath}
+			\morphism{\sigma_\theta}{TM\oplus \mathbb{R}}{\textrm{at}(P)}
+			{\binom{v}{c}}{v^{Hor \theta} + c \cdot E}~.
+		\end{displaymath}
+	\end{enumerate}
+	
+	\hfill \onslide<5->{\hyperlink{frame:scopeTalk}{\color{gray}$[<<]$}}%\beamerskipbutton{}}
+\end{frame}
+%-------------------------------------------------------------------------------------------------------------------------------------------------
 
 %-------------------------------------------------------------------------------------------------------------------------------------------------
 \begin{frame}[t]{From Symplectic to MultiSymplectic (mechanical perspective)}
@@ -1708,6 +1468,159 @@ manifold to any classical field system (e.g. a continuous medium like a filament
   	\item For further details see Gotay et al. \href{https://arxiv.org/abs/physics/9801019}{arXiv:physics/9801019}. For a pictorial representation of all the structures involved in the geometric mechanics of I order classical field theories see appendix, pag: \ref{frame:Gimmsy}.
 }
 %------------------------------------------------------------------------------------------------	
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{frame}[fragile]{A multisymplectic manifold in Lagrangian Field Theory}\label{frame:GIMMSY_construction}
+	\begin{center}
+		\includestandalone[width=.5\textwidth]{Pictures/Frame_GIMMSY}
+	\end{center}	
+	\vfill
+	
+	Consider a \emph{\bf{first-order Lagrangian Field Theory}}:
+	\begin{itemize}
+		\item<1-> {\color{blue} Kinematics} is encoded by a {\color{blue} \emph{configuration bundle}};
+		\item<2-> {\color{red} Dynamics} is encoded by a {\color{red} \emph{Lagrangian density}};
+		\item<3-> The {\color{orange} multicontangent bundle} is naturally $n$-plectic with $\omega := d \theta$ and \\
+		$\theta \in \Omega^n(\Lambda)$ the tautological $n$-form
+		{\small
+		\begin{displaymath}
+			\left[ \iota_{u_1 \wedge \ldots \wedge u_n} \theta \right]_\eta 
+			= \iota_{u_1 \wedge \ldots \wedge u_n} \pi^\ast \eta 
+			\qquad \qquad \forall \eta \in \wedge^n T^* E \, , \: \forall u_i \in T_\eta (\wedge^n T^* E) 		
+		\end{displaymath}
+		}
+		\item<4-> The multisymplectic $(n+1)$-form is pulled back to $J^1 E$ through the \emph{Legendre transformation} $\mathbb{F}\mathcal{L} J^1 E \to (J^1 E)^\circledast$
+    given intrinsically by
+    {\small
+		\begin{displaymath}
+        		\Big\langle \mathbb{F}\mathcal{L}(\gamma),\gamma'\Big\rangle=
+        		\mathcal{L}\Big(\gamma\Big) + \frac{ d}{ d \epsilon}\mathcal{L}\Big(\gamma +\epsilon(\gamma'-\gamma)\Big)\Bigg\vert_{\epsilon=0} \qquad \forall \gamma,\gamma' \in J^1 E
+    		\end{displaymath}
+    }
+
+    %
+	\end{itemize}
+	%
+	\vfill
+	\hfill \onslide<4->{\hyperlink{frame:hystMS}{\color{gray}$[<<]$}}%\beamerskipbutton{}}
+\end{frame}
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{frame}[t,fragile,shrink=20]{Details on the Vinogradov $L_\infty$-algebra Construction}\label{frame:VinoDetails}
+	%
+	\begin{enumerate}[<+-| alert@+>]
+		\setlength\itemsep{2em}
+		\item Consider the \emph{Graded manifold}
+		 $$ Q = T^\ast[n] T[1] M $$
+		 call $\mathcal{C}$ the corresponding algebra of functions.
+		\item $Q$ is a (shifted) contangent, hence it's naturally Poisson
+		 $$ (\mathcal{C},\cdot,\{\cdot,\cdot\}) \qquad \text{is a Poisson $n$-algebra}~;.$$
+		\item consider coordinates on $Q\sim (x^i,v_i, P_i, p_i)$ with
+			$$ |x^i|=0,~ |v^i|=1,~ |P_i|=n, ~ |p_i|=n-1 ~;$$
+		\item The degree $n+1$ function $\mathcal{S}= \sum_i v_i P_i$ encoding the de Rham differential satisfies
+			$\{\mathcal{S},\mathcal{S}\}=0$. Hence
+			 $$ (\mathcal{C}[n],\delta=\{\mathcal{S},\cdot\},\{\cdot,\cdot\}) \qquad \text{is a DGLA}~;$$
+		\item Apply Getzler \cite{Getzler1991} and Fiorenza-Manetti \cite{Fiorenza2006}  \emph{Cone costruction} to the DGLA, one gets a $L_\infty$ algebra on the non-negative truncation of $\mathcal{C}[n]$ given by
+		\begin{displaymath}
+			\begin{tikzcd}[column sep= small,row sep=small]
+				0 \ar[r,] & C^\infty(M) \ar["d",r] &
+				\Omega^1(M) \ar["d",r] & \cdots \ar[r]
+				& \Omega^{n-2}(M) \ar[r]& \Omega^{n-1}(M)\oplus \mathfrak{X}(M) \ar[r] & 0
+			\end{tikzcd}
+		\end{displaymath}			 
+			via derived brackets.	
+	\end{enumerate}
+	\hfill \onslide<5->{\hyperlink{frame:VinoLinfty}{\color{gray}$[<<]$}}%\beamerskipbutton{}}
+\end{frame}
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{frame}[fragile]{Homotopy comomentum maps}
+	Consider a Lie algebra action $v:\mathfrak{g} \to \mathfrak{X}(M)$  \underline{preserving the $n$-plectic form $\omega$}.
+	\vfill
+	\begin{defblock}[Homotopy comomentum map \emph{(Callies, Fregier, Rogers, Zambon)} \cite{Callies2016}]
+			\includestandalone{Pictures/Frame_Lifting}
+	\end{defblock}
+	\onslide<4->{
+	\begin{lemblock}[HCMM unfolded  \cite{Callies2016}]
+			%
+			HCMM is a sequence of (graded-skew) multilinear maps:
+			\begin{displaymath}
+				(f)  = \big\lbrace f_k: \; \Lambda^k{\mathfrak g} \to L^{1-k} \subseteq \Omega^{n-k}(M) 
+				~\big\vert~ 0\leq k \leq n+1  \big\rbrace
+			\end{displaymath}
+			\emph{fulfilling:}%\emph{such that:}
+			\begin{itemize}
+				\item<5-> $f_0 = 0 $, $f_{n+1} = 0$
+				\item<6-> $d f_k (p) = f_{k-1} (
+				\tikz[baseline,remember picture]{\node[rounded corners,
+                        fill=green!5,draw=green!30,anchor=base]            
+            			(target) {$\partial $ };
+            	}				
+				p)  - (-1)^{\frac{k(k+1)}{2}} \iota(v_p) \omega 
+				\qquad\scriptstyle \forall p \in \Lambda^k(\mathfrak{g}),\; \forall k=1,\dots n+1$
+			\end{itemize}
+		\onslide<7->{
+			\tikz[overlay,remember picture]
+			{
+				\node[rounded corners,
+	                 draw=green!30,anchor=base]            
+	            	 (base) at ($(current page.east)-(3,3)$) [rotate=-0,align=center] {\footnotesize{\hyperlink{frame:CE-complex}{\emph{Chevalley-Eilenberg boundary op.}}}};
+			}	
+		\begin{tikzpicture}[overlay,remember picture]
+	    	\path[->] (base.west) edge[bend right,green](target.north east);
+	    \end{tikzpicture}
+	    }
+	\end{lemblock}	
+	}
+	\vfill
+\end{frame}
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+%---------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{frame}[fragile,t]{Leibniz-algebra of Observables}
+
+	\begin{defblock}[Leibniz algebra of observables]
+		\hspace{.25em} $Leib(M,\omega)$ is given by:
+		\begin{itemize}
+			\item[•] the vector space $$\Omega_{ham}^{n-1}(M,\omega)$$
+			\item[•] with the binary bracket 
+			\begin{center}
+				\includestandalone{Pictures/Equation_Leibbracket}	
+			\end{center}
+		\end{itemize}	
+	\end{defblock}
+	\vfill
+	\pause
+	%
+	\begin{propblock}
+		\begin{itemize}
+			\setlength\itemsep{1em}
+			\item[i.] $\vHam_{\llbracket \alpha, \beta \rrbracket} = [\vHam_\alpha,\vHam_\beta]$
+			\item[ii.] $\llbracket \sigma, \llbracket \alpha, \beta \rrbracket \rrbracket =
+			\llbracket\llbracket \sigma, \alpha \rrbracket, \beta \rrbracket
+			+
+			\llbracket \alpha, \llbracket \sigma, \beta \rrbracket \rrbracket$
+			\item[iii.] $\llbracket \alpha, \beta \rrbracket + \llbracket \beta,\alpha \rrbracket = d \left( \iota_{\vHam_\alpha} \beta + \iota_{\vHam_\beta} \alpha\right)$
+		\end{itemize}
+	\end{propblock}
+
+\end{frame}
+\note[itemize]{
+	\item in addition to being extendable to an $L_\infty$-algebra, the space $\Omega^{n-1}_{ham}(M)$ also carries the structure of a Leibniz algebra. This structure is very important for multisymplectic reduction procedures.
+	\item 
+	\item Take away: Two brackets on $\Omega_H^{k-1}(M)$, ${\color{red}\llbracket\alpha,\beta\rrbracket = \mathcal{L}_{X_\alpha} \beta}$ and ${\color{green}\{\alpha,\beta\}=\iota_{X_\alpha}\d\beta}$,
+	Equal up to a coboundary: ${\color{red}\mathcal{L}_{X_\alpha}\beta} = {\color{green}\iota_{X_\alpha}\d\beta} + \d\hspace{1pt}\iota_{X_\alpha}\beta$
+}
+%---------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 
 
 %------------------------------------------------------------------------------------------------

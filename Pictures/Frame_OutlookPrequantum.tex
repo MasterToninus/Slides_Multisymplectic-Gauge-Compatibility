@@ -1,0 +1,63 @@
+%+------------------------------------------------------------------------+
+%| Diagram with Overlays: Gauge square Diagram - symplectic case
+%| Author: Antonio miti
+%+------------------------------------------------------------------------+
+
+
+\documentclass[beamer,handout]{standalone}
+\usepackage{tikz-cd}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{cd, fit}
+
+	%Credit: https://tex.stackexchange.com/questions/99119/beamer-problematic-use-of-visible-and-only-in-combination-with-tikz-to-draw-a
+  \tikzset{
+    invisible/.style={opacity=0},
+    visible on/.style={alt=#1{}{invisible}},
+    alt/.code args={<#1>#2#3}{%
+      \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
+    },
+  }
+
+\definecolor{grey}{rgb}{0.30, 0.30, 0.30}
+
+\begin{document}
+	%
+	\begin{tikzcd}[column sep= large,row sep=normal,
+		/tikz/execute at end picture={
+    		\node (large) [rectangle,dashed, draw, fit=(A1) (A2) (A3),label=below:{\scriptsize{\emph{$L_\infty$ algebras cat.}}}] {};
+  		}]	
+		& |[visible on=<1->,alias=A1]| L_\infty(M,\omega)
+		\ar[rr,visible on=<1->,"\Psi_\omega"]
+		\ar[dr,visible on=<2->,sloped,dashed,dash,"\text{Preq ?}",xshift=.5em]	
+		\ar[dd,visible on=<2->,phantom,blue,"\circlearrowright"]
+		&
+		& |[visible on=<1->]| L_\infty(E,\omega)
+		\ar[dd,sloped,"\sim",visible on=<1->]
+		&
+%		 
+	\\
+%
+		|[visible on=<1->,alias=A2]|\mathfrak{g} \ar[ur,visible on=<1->]\ar[dr,visible on=<1->]& 
+		&
+		|[visible on=<2->]| ~[~???~]~ 
+		\ar[ur,visible on=<2->,dashed,dash] 
+		\ar[dr,visible on=<2->,dashed,dash]
+		\ar[r,visible on=<2->,phantom,blue,"\circlearrowright"]
+		& \phantom.
+		&
+%
+	\\
+%
+		&|[visible on=<1->]| L_\infty(M,\widetilde{\omega})
+		\ar[rr,visible on=<1->,"\Psi_\omega"]
+		\ar[ur,visible on=<2->,sloped,dashed,dash,"\text{Preq ?}"',xshift=.5em]		
+		& 
+		&
+		|[visible on=<1->,alias=A3]| L_\infty(E,\widetilde{\omega})
+		&
+ 	\end{tikzcd}	
+\end{document}
+
+	
