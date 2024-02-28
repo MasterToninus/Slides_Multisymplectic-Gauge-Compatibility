@@ -39,4 +39,9 @@ The goal is to write a long presentation with a complete handout when my transfe
 # Update - June 2022
 A 1 hour talk by M.Z. based on the same work has been recorded on [YouTube](http://www.youtube.com/watch?v=weEVJ57b_No)
 
+# Update - September 2023
+New version ==msgauge-wurzburg.tex== for a workshop in [Wurzburg](https://www.mathematik.uni-wuerzburg.de/mathematicalphysics/forschung/veranstaltungen/workshops-und-konferenzen/single/news/poisson-geometry-higher-structures-and-deformation-theory/). 
+The presentation failed badly due to personal problems and miscalculation of time.
 
+# Update - Febraury 2024
+New version ==msgauge-Caprarola.tex== for a worskhop in [Caprarola](http://wpage.unina.it/francesco.dandrea/Caprarola2024/index.html).

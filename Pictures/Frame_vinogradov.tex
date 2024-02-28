@@ -50,10 +50,10 @@
 		\tikzstyle{na} = [baseline=-.5ex]
 		%
 		\tikz[na] \node[scale=0.5,coordinate,fill=blue!20,draw,circle] (n1) {};		    
-		   		 \onslide<2->{Vector bun. $E=TM\oplus (\wedge^{n-1}T^\ast M)$;}
+		   		 \onslide<1->{Vector bun. $E=TM\oplus (\wedge^{n-1}T^\ast M)$;}
 		\\
 		\tikz[na]\node [scale=0.5,coordinate,fill=green!20,draw,circle] (n2) {};	    
-		    		\onslide<3->{anchor map 
+		    		\onslide<2->{anchor map 
 						\begin{tikzcd}[baseline=(O.base),ampersand replacement=\&]
 							|[alias=O]|\rho~:\&[-3em] E \ar[r]\& TM
 							\\[-2em]
@@ -66,7 +66,7 @@
 	\begin{minipage}[t]{\textwidth}
 		\tikzstyle{na} = [baseline=-.5ex]
 		\qquad\quad\tikz[na]\node [scale=0.5,coordinate,fill=orange!20,draw,circle] (n3) {};	    
-		\onslide<4->{pairing
+		\onslide<3->{pairing
 			\begin{tikzcd}[baseline=(O.base),ampersand replacement=\&]
 				|[alias=O]|\pairing_{\pm}~:\&[-4em] E\otimes E \ar[r]\& \wedge^{n-2}T^\ast M
 				\\[-2em]
@@ -77,7 +77,7 @@
 		}
 		\\[.5em]
 		\tikz[na]\node [scale=0.5,coordinate,fill=red!20,draw,circle] (n4) {};	    
-		\onslide<5->{(higher) Courant bracket 
+		\onslide<4->{(higher) Courant bracket 
 			\begin{displaymath}
 				\begin{tikzcd}[ampersand replacement=\&]
 					\lbrack\cdot,\cdot\rbrack_\omega~:\&[-3em] \Gamma(E)\otimes \Gamma(E) \ar[r]\& \Omega^{n-2}(M)
@@ -97,10 +97,10 @@
 % Now it's time to draw some edges between the global nodes. Note that we
 % have to apply the 'overlay' style.
 \begin{tikzpicture}[overlay]
-        \onslide<2->{\path[->,opacity=0.3] (n1) edge [bend right] (t1);}
-        \onslide<3->{\path[->,opacity=0.3] (n2) edge [bend left] (t2);}
-        \onslide<4->{\path[->,opacity=0.3] (n3) edge [bend left] (t3.south);}
-        \onslide<5->{\path[->,opacity=0.3] (n4) edge [bend left] (t4.south);}
+        \onslide<1->{\path[->,opacity=0.3] (n1) edge [bend right] (t1);}
+        \onslide<2->{\path[->,opacity=0.3] (n2) edge [bend left] (t2);}
+        \onslide<3->{\path[->,opacity=0.3] (n3) edge [bend left] (t3.south);}
+        \onslide<4->{\path[->,opacity=0.3] (n4) edge [bend left] (t4.south);}
        % \path[->] (n3) edge [out=0, in=-90] (t3);
 \end{tikzpicture}
 

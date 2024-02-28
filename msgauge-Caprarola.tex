@@ -30,6 +30,8 @@
 \usepackage{fontawesome}
 \usepackage{amsfonts}
 
+\usepackage{pdfpages} %copy from other sources
+
 
 %--Beamer Style----------------------------------------------------------------------------------------
 \usetheme{toninus}
@@ -145,7 +147,7 @@ Multisymplectic observables and higher Courant algebroids
 \iffalse \section{Introduction}\fi
 %-------------------------------------------------------------------------------------------------------------------------------------------------
 
-
+\setbeamercovered{transparent}
 %-------------------------------------------------------------------------------------------------------------------------------------------------
 \begin{frame}[t] % Hybrid format - Title Page
 	%
@@ -181,7 +183,7 @@ Multisymplectic observables and higher Courant algebroids
 \end{frame}
 \addtocounter{framenumber}{-1}
 %-------------------------------------------------------------------------------------------------------------------------------------------------
-
+\setbeamercovered{invisible}
 
  
 %-------------------------------------------------------------------------------------------------------------------------------------------------
@@ -198,7 +200,7 @@ Multisymplectic observables and higher Courant algebroids
 			\only<1-3>{
 			\item<1-> a \alert<1>{Poisson algebra} w/ $$\{f,g\}_\omega = -\iota_{\vHam_f}\iota_{\vHam_g} \omega$$
 			\item<2-> a \alert<2>{(standard twisted) Lie Algebroid};
-			\item<3->[-] A Lie algebroid is a "controlled" $\infty$-dimensional Lie algebra w/
+			\item<3->[-] A Lie algebroid is a "controlled" $\infty$-dimensional \alert<3>{Lie algebra} w/
 			\begin{displaymath}
 					\left[\binom{x_1}{f_1},\binom{x_2}{f_2}\right]_\omega
 					~=~
@@ -240,12 +242,12 @@ Multisymplectic observables and higher Courant algebroids
 				\item<3-> There is a natural \alert<3>{isomorphism in the Lie Alg.oids category} \emph{($B$-transformation)}
 					\begin{displaymath}
 						\binom{x}{f} \mapsto \binom{x}{f-\iota_x B} ~.
-					\end{displaymath}~.
+					\end{displaymath}
 				\item<4-> It descends to an \alert<4>{isomorphism of Lie algebras}.
 			}
 			\only<6-8>{
 				\item<6-> \vspace{-2em}Consider an infinitesimal \alert<6>{Hamiltonian group action} $\mathfrak{g}\curvearrowright M$ w.r.t. both $\omega$ and $\tilde{\omega}$.
-				\item<7-> let be $f:\mathfrak{g} \to C^\infty(M)_\omega$ and $\tilde{f}:\mathfrak{g} \to C^\infty(M)_{\tilde{\omega}}$ two comoment map s.t.
+				\item<7-> let be $f:\mathfrak{g} \to C^\infty(M)_\omega$ and $\tilde{f}:\mathfrak{g} \to C^\infty(M)_{\tilde{\omega}}$ two \alert<7>{comoment maps} s.t.
 				\begin{displaymath}
 					\tilde{f}(\xi) = f(\xi) - \iota_{\underline{\xi}}B
 				\end{displaymath}
@@ -308,7 +310,7 @@ Multisymplectic observables and higher Courant algebroids
 	We end up with a pentagonal diagram ...
 	%
 	\begin{center}
-			\includestandalone[width=.8\textwidth]{Pictures/hyb-image_BigDiagram_symplectic}
+			\includestandalone[width=.95\textwidth]{Pictures/hyb-image_BigDiagram_symplectic}
 	\end{center}
 	%
 	\vfill
@@ -547,7 +549,7 @@ Multisymplectic observables and higher Courant algebroids
 			\onslide<4->{
 			\vspace{1em}
 			\begin{itemize}
-				\item[\cmark] Skew-symmetric;
+				\item[\cmark] Skew-symmetric brakets;
 				\item[\cmark] multiplication of observables;
 				\item[\cmark] Leibniz Rule;
 				\item[\cmark] Jacobi equation;
@@ -574,7 +576,7 @@ Multisymplectic observables and higher Courant algebroids
 			%
 			\onslide<6->{
 			\begin{itemize}
-				\item[\cmark] Skew-symmetric;
+				\item[\cmark] Skew-symmetric brackets;
 				\item[\xmark] multiplication of observables;
 				\item[\xmark] Jacobi equation;
 				%\\ \hspace*{4.25em} full-fledged Jacobi equation;
@@ -645,7 +647,7 @@ Multisymplectic observables and higher Courant algebroids
 		\hspace{.25em} Is a cochain-complex $(L,\{\cdot\}_1)$ \\
 		\vspace{-1em}
 		\begin{center}
-			\includestandalone{Pictures/Frame_Observables}
+			\includestandalone[width=0.95\textwidth]{Pictures/Frame_Observables}
 		\end{center}
 		\onslide<2->{
 			\bigskip
@@ -698,8 +700,8 @@ Multisymplectic observables and higher Courant algebroids
 	\end{defblock}
 	\vfill
 	\begin{itemize}
-		\item<6-> $(n=1) ~ \Rightarrow$ standard twisted {\small \color{UniGreen} (by a closed $2$-form)}  \emph{Lie algebroid};
-		\item<7-> $(n=2) ~ \Rightarrow$ standard twisted {\small \color{UniGreen} (by a closed $3$-form)} \emph{Courant algebroid};
+		\item<5-> $(n=1) ~ \Rightarrow$ standard twisted {\small \color{UniGreen} (by a closed $2$-form)}  \emph{Lie algebroid};
+		\item<5-> $(n=2) ~ \Rightarrow$ standard twisted {\small \color{UniGreen} (by a closed $3$-form)} \emph{Courant algebroid};
 	\end{itemize}
 
 \end{frame}
@@ -719,14 +721,17 @@ Multisymplectic observables and higher Courant algebroids
 		\includestandalone[width=0.95\textwidth]{Pictures/Frame_vinogradov-Linfty}	
 	\end{defblock}
 	\vfill
-	\only<6->{
+	\only<3->{
 		\tikz[overlay,remember picture]
 		{
 			\node[rounded corners,
                  fill=gray!1,draw=gray!30,anchor=base]            
-            	 (base) at ($(current page.south)+(0,.5)$) [rotate=-0,text width=10cm,align=center] { \footnotesize{\color{gray}{
-            	 $e_i = \binom{X_i}{\alpha_i} \in \mathfrak{X}(M)\oplus \Omega^{n-1}(M)$ 
-            	 \quad~,\qquad
+            	 (base) at ($(current page.south)+(0,.5)$) [rotate=-0,text width=10cm,align=center] {
+            	 \footnotesize{\color{gray}{
+            	 \onslide<4->{
+            	 	$e_i = \binom{X_i}{\alpha_i} \in \mathfrak{X}(M)\oplus \Omega^{n-1}(M)$ 
+            	 	\quad~,\qquad
+            	 }
             	 $f_i \in \bigoplus_{k=0}^{n-2}\Omega^k(M)$.
             	 }}};
 		}			
@@ -753,7 +758,7 @@ Multisymplectic observables and higher Courant algebroids
 
 %-------------------------------------------------------------------------------------------------------------------------------------------------
 \begin{frame}[t]{Comoment maps}
-	Consider a Lie algebra action $v:\mathfrak{g} \to \mathfrak{X}(M)$  preserving the $n$-plectic form $\omega$,
+	Consider a Lie algebra action $\underline{\,\cdot\,}:\mathfrak{g} \to \mathfrak{X}(M)$  preserving the $n$-plectic form $\omega$,
 	\vfill
 
 	\vspace{-1em}
@@ -768,7 +773,7 @@ Multisymplectic observables and higher Courant algebroids
 					Lie algebra morphism
 					$$ f: \mathfrak{g} \to C^\infty(M) $$
 					such that
-					$$ d~f (x) = -\iota_{v_x} \omega \qquad \forall x \in \mathfrak{g}~.$$
+					$$ d~f (\xi) = -\iota_{\underline{\xi}} \omega \qquad \forall \xi \in \mathfrak{g}~.$$
 				\end{defblock}
 			}
 		\end{column}	
@@ -783,7 +788,7 @@ Multisymplectic observables and higher Courant algebroids
 					$L_\infty$-morphism 
 					$$ (f_k) : \mathfrak{g} \to L_\infty (M,\omega)$$
 					such that
-					$$ d~f_1(x) = -\iota_{v_x} \omega \qquad \forall x \in \mathfrak{g}~.$$
+					$$ d~f_1(\xi) = -\iota_{\underline{\xi}} \omega \qquad \forall \xi \in \mathfrak{g}~.$$
 				\end{defblock}	
 			}
 		\end{column}	
@@ -803,7 +808,7 @@ Multisymplectic observables and higher Courant algebroids
 			\onslide<4->{
 			\begin{propblock}[Noether Theorem]
 				\small Fixed $H\in C^\infty_{\text{Ham}}(M)$ ($\mathfrak{g}$-invariant) ,
-				$$\mathcal{L}_{v_H} f(x) = 0 \qquad \forall x \in \mathfrak{g}$$
+				$$\mathcal{L}_{\vHam_H} f(\xi) = 0 \qquad \forall \xi \in \mathfrak{g}$$
 			\end{propblock}
 			}
 		\end{column}	
@@ -815,7 +820,7 @@ Multisymplectic observables and higher Courant algebroids
 			\onslide<5->{			
 			\begin{propblock}[RWZ16 Theorem]
 				\small Fixed $H\in \Omega^{n-1}_{\text{Ham}}(M)$ ($\mathfrak{g}$-invariant),
-				$$\mathcal{L}_{v_H} f_k(p) \in B^k(M) \qquad \forall p \in Z_k(\mathfrak{g})$$			
+				$$\mathcal{L}_{\vHam_H} f_k(p) \in B^k(M) \qquad \forall p \in Z_k(\mathfrak{g})$$			
 			\end{propblock}
 			}
 		\end{column}	
@@ -853,10 +858,10 @@ Multisymplectic observables and higher Courant algebroids
 	\par\noindent\rule{\textwidth}{0.4pt}	
 	\vfill
 	%
-	Consider \quad $v:\mathfrak{g} \to \mathfrak{X}(M)$ preserving $\omega$ and $\tilde{\omega}$,
+	Consider \quad $\underline{\,\cdot\,} : \mathfrak{g} \to \mathfrak{X}(M)$ preserving $\omega$ and $\tilde{\omega}$,
 	%\phantom{consider}\quad $\mathcal{L}_{v_\xi}\omega=\mathcal{L}_{v_\xi}\tilde{\omega} = 0 \quad \forall \xi \in \mathfrak{g}$
 	\\
-	let \qquad$f: \mathfrak{g}\to L_\infty(M,\omega)$ an \emph{homotopy comoment map} ~ w.r.t. $\mathfrak{g}\circlearrowleft (M,\omega)$
+	let \qquad$f: \mathfrak{g}\to L_\infty(M,\omega)$ an \emph{homotopy comoment map} ~ w.r.t. $\mathfrak{g}\curvearrowright (M,\omega)$
 	\pause
 	\begin{lemblock}[Also $(M,\tilde{\omega})$ admits HCMM $(\tilde{f})$]
 		\medskip
@@ -884,7 +889,7 @@ Multisymplectic observables and higher Courant algebroids
 							~:\&[-3em] \Lambda^k\mathfrak{g} \ar[r]\& \Omega^{n-k}(M)
 							\\[-2em]
 							\& \xi_1\wedge\dots \xi_k \ar[r,mapsto] \&
-							(-)^k \iota(v_{\xi_1})\dots \iota(v_{\xi_{x_k}}) B
+							(-)^k \iota(\underline{\xi_1})\dots \iota(\underline{\xi_{x_k}}) B
 						\end{tikzcd}		
 						\end{displaymath}								
 					}		
@@ -988,7 +993,7 @@ Multisymplectic observables and higher Courant algebroids
 
 %-------------------------------------------------------------------------------------------------------------------------------------------------
 \begin{frame}[t]{Higher $B$-transformation}
-	Consider now $\omega$ \alert{n-plectic} \quad and \quad \alert{$\tilde{\omega}=\omega + d B$}:
+	Consider now $\omega$ \alert{n-plectic} \quad and \quad \alert{$\tilde{\omega}=\omega - d B$}:
 		\medskip
 	\only<4->{\vspace{-2em}}			
 	\begin{center}
@@ -1026,7 +1031,7 @@ Multisymplectic observables and higher Courant algebroids
 					~:\&[-3em] \left(\mathcal{V}^n\right)_0 \ar[r,"\sim"] \& (\widetilde{\mathcal{V}}^n)_0=\mathfrak{X}(M)\oplus\Omega^{n-1}(M)
 					\\[-2em]
 					\& \binom{x}{\alpha} \ar[r,mapsto] \&
-					\binom{x}{\alpha +\iota_x B}
+					\binom{x}{\alpha -\iota_x B}
 				\end{tikzcd}	
 				}
 				\end{displaymath}
@@ -1523,7 +1528,6 @@ manifold to any classical field system (e.g. a continuous medium like a filament
 %-------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-
 %-------------------------------------------------------------------------------------------------------------------------------------------------
 \begin{frame}[fragile]{Homotopy comomentum maps}
 	Consider a Lie algebra action $v:\mathfrak{g} \to \mathfrak{X}(M)$  \underline{preserving the $n$-plectic form $\omega$}.
@@ -1612,6 +1616,7 @@ manifold to any classical field system (e.g. a continuous medium like a filament
 
 %------------------------------------------------------------------------------------------------
 % https://en.wikibooks.org/wiki/LaTeX/Bibliographies_with_biblatex_and_biber
+\subsection{Bibliography}
 \begin{frame}[t,allowframebreaks]{Extended Bibliography}
 	\bibliographystyle{alpha}
 	\bibliography{bibfile}
@@ -1619,7 +1624,24 @@ manifold to any classical field system (e.g. a continuous medium like a filament
 %------------------------------------------------------------------------------------------------
 
 
-
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+\section{Addendum}
+%------------------------------------------------------------------------------------------------
+%##################################################################################
+\begin{frame}
+	\begin{center}
+	\Huge\emph{Addendum}
+	
+	\vspace{1em}
+	\small(Credits to \href{https://www.icmat.es/congresos/2022/poisson-ggi/program.php}{M. Zambon})
+	\end{center}
+\end{frame}
+\addtocounter{framenumber}{-1}
+%##################################################################################
+%-------------------------------------------------------------------------------------------------------------------------------------------------
+% Include From M Zambon Talk.
+\includepdf[pages={7-15}]{Sources/Zambon-slides.pdf}
+%-------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
